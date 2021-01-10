@@ -1,0 +1,52 @@
+doctype html
+html
+    head
+        title Sign Up Page
+        link(rel="stylesheet", href="css/signupstyle.css")
+        script(src="https://kit.fontawesome.com/112897e29a.js" crossorigin="anonymous")
+    body 
+        include ../includs/headerFile/header.pug
+        .slider
+            div(class="container flex-center")
+                -// Start The Register Box
+                div(class="register global-form")
+                    .header
+                        h2 register
+                    form(autocomplete="off" id="form" method="post")
+                        .control-form
+                            input(class= "main" type="text" name="username" placeholder="User Name" id="username")
+                            .error-username error
+                            i(class="fas fa-check-circle")
+                            i(class="fas fa-exclamation-circle")
+                        .control-form
+                            input(class= "main" type="text" name="email" placeholder="Email" id="email")
+                            .error-email error
+                            i(class="fas fa-check-circle")
+                            i(class="fas fa-exclamation-circle")
+                        .control-form
+                            input(class= "main" type="password" name="password" placeholder="Password" id="password")
+                            .error-password error
+                            i(class="fas fa-check-circle")
+                            i(class="fas fa-exclamation-circle")
+                        .control-form
+                            input(class= "main" type="password" name="confirm-password" placeholder="Confirm Password" id="password2")
+                            .error-confirm-password error
+                            i(class="fas fa-check-circle")
+                            i(class="fas fa-exclamation-circle")
+                        .control-form
+                            input(type="checkbox" name="check-terms" placeholder="Confirm Password" id="check-terms")
+                            label(for="check-terms") I agree Terms & Conditions
+                            .error-terms error
+                        .control-submit
+                            input(type="submit" name="sign-submit" value="sign up")
+                    .other-account
+                        h4 Or Signup With
+                        div(class="social flex-center")
+                            p.face Facebook
+                            p.twitter Twitter
+                            p.google Google+
+                        p.account have an account 
+                            a(href="../loginpage/login.html") Login
+        include ../includs/FooterFile/footer.pug
+        script(src="js/sign-up-validation.js")
+        script(src="../includs/headerFile/js/toggleheader.js")

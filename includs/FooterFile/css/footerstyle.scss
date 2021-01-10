@@ -1,0 +1,114 @@
+@import url(../../globalrules/framework.css);
+
+// Global Rules
+$maintextcolor: #D64481;
+
+footer {
+    padding: 50px 0;
+    background: #12111E;
+    .container {
+        .box-1 {
+            width: 30%;
+            a {
+                color: #FFF;
+                text-decoration: none;
+                h2 {
+                    text-transform: uppercase;
+                    span {
+                        font-size: 30px;
+                        color: $maintextcolor;
+                    }
+                }    
+            }
+            p {
+                line-height: 1.5;
+                color: #D1D1D1;
+                font-size: 14px;
+                margin: 10px 0 20px;
+            }
+            form {
+                input {
+                    padding: 7px 10px;
+                    border: 1px solid #1e1e27;
+                    background: inherit;
+                    font-size: 15px;
+                    color: #F0F0F0;
+                    &:focus {
+                        outline: none;
+                    }
+                }
+                button {
+                    padding: 5px 10px;
+                    color: #FFF;
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-left: -5px;
+                    cursor: pointer;
+                    &:focus {
+                        border: none;
+                        outline: none;
+                    }
+                }
+            }
+        }
+        .box {
+            width: 15%;
+            h3 {
+                text-transform: uppercase;
+                color: #FFF;
+                margin-bottom: 20px;
+            }
+            a {
+                display: block;
+                width: fit-content;
+                color: #F0F0F0;
+                margin-bottom: 15px;
+                text-decoration: none;
+                font-size: 15px;
+                transition: color .3s;
+                &:hover {
+                    color: $maintextcolor;
+                }
+                i {
+                    margin-right: 7px;
+                }
+            }
+        }
+    }
+}
+.copy-right {
+    padding: 10px 0;
+    background: #1E1D32;
+    color: #FFF;
+    font-size: 15px;
+    p {
+        line-height: 1.5;
+        span {
+            color: $maintextcolor;
+            text-transform: uppercase;
+        }
+    }
+}
+@media (max-width: 767px) {
+    footer {
+        .box-1,
+        .box {
+            width: 100% !important;
+            margin-bottom: 30px;
+        }
+    }
+}
+@media (min-width: 767px) and (max-width: 991px) {
+    footer {
+        .box-1 {
+            width: 100% !important;
+            margin-bottom: 30px;
+            p {
+                width: 50%;
+            }
+        }
+        .box {
+            width: 23% !important;
+        }    
+    }
+}

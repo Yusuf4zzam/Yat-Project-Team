@@ -1,0 +1,403 @@
+@import url(../../includs/FooterFile/css/footerstyle.css);
+@import url(../../includs/headerFile/css/headerstyle.css);
+@import url(../../globalrules/framework.css);
+
+$maintextcolor: #D64481;
+$first-bg-color:#171627;
+$second-bg-color: #131222;
+@keyframes homeAnimate{
+    0% {
+        transform: translateY(30px);
+    }
+    20% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(30px);
+    }
+    40% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(30px);
+    }
+    60% {
+        transform: translateY(0);
+    }
+    70% {
+        transform: translateY(30px);
+    }
+    80% {
+        transform: translateY(0);
+    }
+    90% {
+        transform: translateY(30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+// Start Slider Box
+.slider {
+    position: relative;
+    color: #FFF;
+    padding: 120px 0 0;
+    background: $first-bg-color;
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .container {
+        align-items: flex-start;
+        .content {
+            width: 45%;
+            z-index: 99999;
+            h1 {
+                font-size: 35px;
+                line-height: 1.3;
+                span {
+                    color: $maintextcolor;
+                }
+            }
+            p {
+                margin: 30px 0;
+                line-height: 1.5;
+                color: #D1D1D1;
+            }
+            a {
+                display: inline-block;
+                text-decoration: none;
+                color: #FFF;
+                font-weight: bold;
+                letter-spacing: 1px;
+                padding: 10px 20px;
+                border-radius: 3px;
+            }
+        }
+        .image {
+            width: 50%;
+            z-index: 99999;
+            animation: homeAnimate 25s ease-in-out infinite;
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+// Start Member Box
+.member {
+    color: #FFF;
+    padding: 70px 0;
+    background: $first-bg-color;
+    .container {
+        .box {
+            width: 32%;
+            padding: 30px 15px;
+            background: #26253F;
+            border-radius: 3px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            &:first-of-type {
+                p {
+                    &:before {
+                        background: #0A0;
+                    }
+                }
+            }
+            &:nth-child(2) {
+                p {
+                    &:before {
+                        background: #FFAB46;
+                    }
+                }
+            }
+            &:last-of-type {
+                p {
+                    &:before {
+                        background: $maintextcolor;
+                    }
+                }
+            }
+            img {
+                width: 90px;
+                border-radius: 50%;
+            }
+            .text {
+                margin-left: 25px;
+                h2 {
+                    font-size: 30px;
+                    letter-spacing: 1px;
+                }
+                p {
+                    position: relative;
+                    text-transform: uppercase;
+                    margin-top: 3px;
+                    margin-left: 17px;
+                    letter-spacing: 1px;
+                    font-size: 14px;
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        top: 5px;
+                        left: -15px;
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Start about-us Box
+.about-us {
+    color: #FFF;
+    padding: 70px 0;
+    background: $second-bg-color;
+    .container {
+        align-items: flex-start;
+        .left-box {
+            width: 45%;
+            img {
+                width: 100%;
+            }
+            p {
+                margin-top: 10px;
+                text-align: center;
+                color: #D1D1D1;
+                a {
+                    color: #FFF;
+                    transition: color .3s;
+                    &:hover {
+                        color: $maintextcolor;
+                    }
+                }
+            }
+        }
+        .right-box {
+            width: 48%;
+            .box {
+                padding: 30px 10px;
+                background: #26253F;
+                border-radius: 3px;
+                display: flex;
+                align-items: flex-start;
+                &:not(:last-of-type) {
+                    margin-bottom: 30px;
+                }
+                img {
+                    width: 70px;
+                }
+                .text {
+                    margin-left: 15px;
+                    h2 {
+                        margin-bottom: 15px;
+                        font-size: 21px;
+                    }
+                    p {
+                        line-height: 1.5;
+                        font-size: 15px;
+                        color: #D1D1D1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Start games Box
+.games {
+    padding: 70px 0;
+    color: #FFF;
+    background: $first-bg-color;
+    .heading {
+        margin-bottom: 50px;
+        h2 {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 40px;
+        }
+        p {
+            width: 45%;
+            line-height: 1.5;
+            text-align: center;
+            color: #D1D1D1;
+        }
+    }
+    .load-more {
+        margin-top: 40px;
+        padding: 20px 0;
+        background: #131222;
+        text-align: center;
+        a {
+            text-decoration: none;
+            color: #FFF;
+            text-transform: uppercase;
+            font-size: 18px;
+            letter-spacing: 1px;
+            transition: .3s;
+            &:hover {
+                color:$maintextcolor;
+            }
+        }
+    }
+    .content {
+        .box {
+            width: 32%;
+            border-radius: 3px;
+            overflow: hidden;
+            img {
+                width: 100%;
+            }
+            .text {
+                margin-top: 10px;
+                padding: 0 10px;
+                h3 {
+                    margin-bottom: 5px;
+                }
+                p {
+                    color: #D1D1D1;
+                    font-size: 14px;
+                    line-height: 1.5;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+// Rsponsive Design
+@media(max-width: 767px) {
+    // Start Slider Box
+    .slider {
+        .container {
+            justify-content: center !important;
+        }
+        .content {
+            width: 100% !important;
+            margin-bottom: 40px;
+        }
+        .image {
+            width: 80% !important;
+        }
+    }
+
+    //Start Member Box
+    .member {
+        .box {
+            .image {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            .text {
+                width: 100%;
+                text-align: center;
+                margin: 0 !important;
+                p {
+                    display: inline-block;
+                    margin-left: 0 !important;
+                }
+            }
+            width: 100% !important;
+            margin-bottom: 30px;
+        }
+    }   
+
+    // Start About-us Box
+    .about-us {
+        .container {
+            justify-content: center !important;
+        }
+        .left-box {
+            width: 80% !important;
+            order: 2;
+        }
+        .right-box {
+            width: 100% !important;
+            margin-bottom: 40px;
+        }
+    }
+
+    // Start Games Box
+    .games {
+        .heading {
+            p {
+                width: 100% !important;
+            }
+        }
+        .box {
+            width: 100% !important;
+            margin-bottom: 30px;
+        }
+    }
+}
+@media(min-width: 767px) and (max-width: 991px) {
+    .slider {
+        .container {
+            justify-content: center !important;
+        }
+        .content {
+            width: 100% !important;
+            margin-bottom: 40px;
+        }
+        .image {
+            width: 70% !important;
+        }
+    }
+
+    //Start Member Box
+    .member {
+        .box {
+            width: 48.5% !important;
+            margin-bottom: 30px;
+        }
+    }
+
+    // Start About-us Box
+    .about-us {
+        .container {
+            justify-content: center !important;
+        }
+        .left-box {
+            width: 70% !important;
+            order: 2;
+        }
+        .right-box {
+            width: 100% !important;
+            margin-bottom: 40px;
+        }
+    }
+
+    // Start Games Box
+    .games {
+        .box {
+            width: 48% !important;
+            margin-bottom: 30px;
+        }
+    }
+}
+@media(min-width: 991px) and (max-width: 1200px) {
+    //Start Member Box
+    .member {
+        .box {
+            width: 48.5% !important;
+            margin-bottom: 30px;
+        }
+    }    
+}

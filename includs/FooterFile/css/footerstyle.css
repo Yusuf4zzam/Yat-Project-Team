@@ -1,0 +1,125 @@
+@import url(../../globalrules/framework.css);
+footer {
+  padding: 50px 0;
+  background: #12111E;
+}
+
+footer .container .box-1 {
+  width: 30%;
+}
+
+footer .container .box-1 a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+footer .container .box-1 a h2 {
+  text-transform: uppercase;
+}
+
+footer .container .box-1 a h2 span {
+  font-size: 30px;
+  color: #D64481;
+}
+
+footer .container .box-1 p {
+  line-height: 1.5;
+  color: #D1D1D1;
+  font-size: 14px;
+  margin: 10px 0 20px;
+}
+
+footer .container .box-1 form input {
+  padding: 7px 10px;
+  border: 1px solid #1e1e27;
+  background: inherit;
+  font-size: 15px;
+  color: #F0F0F0;
+}
+
+footer .container .box-1 form input:focus {
+  outline: none;
+}
+
+footer .container .box-1 form button {
+  padding: 5px 10px;
+  color: #FFF;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: -5px;
+  cursor: pointer;
+}
+
+footer .container .box-1 form button:focus {
+  border: none;
+  outline: none;
+}
+
+footer .container .box {
+  width: 15%;
+}
+
+footer .container .box h3 {
+  text-transform: uppercase;
+  color: #FFF;
+  margin-bottom: 20px;
+}
+
+footer .container .box a {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #F0F0F0;
+  margin-bottom: 15px;
+  text-decoration: none;
+  font-size: 15px;
+  -webkit-transition: color .3s;
+  transition: color .3s;
+}
+
+footer .container .box a:hover {
+  color: #D64481;
+}
+
+footer .container .box a i {
+  margin-right: 7px;
+}
+
+.copy-right {
+  padding: 10px 0;
+  background: #1E1D32;
+  color: #FFF;
+  font-size: 15px;
+}
+
+.copy-right p {
+  line-height: 1.5;
+}
+
+.copy-right p span {
+  color: #D64481;
+  text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+  footer .box-1,
+  footer .box {
+    width: 100% !important;
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+  footer .box-1 {
+    width: 100% !important;
+    margin-bottom: 30px;
+  }
+  footer .box-1 p {
+    width: 50%;
+  }
+  footer .box {
+    width: 23% !important;
+  }
+}
+/*# sourceMappingURL=footerstyle.css.map */

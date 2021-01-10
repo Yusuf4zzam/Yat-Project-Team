@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+$bodyColor: #171627;
+$maintextcolor: #D64481;
+body {
+    background: $bodyColor;
+    font-family: 'Open Sans', sans-serif;
+}
+
+::selection {
+    color: #FFF;
+    background: $maintextcolor;
+}
+.container {
+    padding: 0 15px;
+    margin: auto;
+}
+
+.flex {
+    display: flex;
+}
+.align-center {
+    align-items: center;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.flexbetween {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.flex-center {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.global-hover {
+    color: #FFF;
+    background: $maintextcolor;
+    border: 1px solid $maintextcolor;
+    transition: .3s;
+    &:hover {
+        color: $maintextcolor;
+        background: none;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+@media(min-width: 767px) and (max-width: 991px) {
+    .container {
+        width: 767px;
+    }
+}
+@media(min-width: 991px) and (max-width: 1200px) {
+    .container {
+        width: 991px;
+    }
+}
+@media(min-width: 1200px) {
+    .container {
+        width: 1200px;
+    }
+}

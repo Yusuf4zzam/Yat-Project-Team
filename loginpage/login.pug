@@ -1,0 +1,37 @@
+doctype html
+html
+    head
+        title Login Page
+        link(rel="stylesheet", href="css/loginstyle.css")
+        script(src="https://kit.fontawesome.com/112897e29a.js" crossorigin="anonymous")
+    body 
+        include ../includs/headerFile/header.pug
+        .slider
+            div(class="container flex-center")
+                -// Start The Register Box
+                div(class="login global-form")
+                    .header
+                        h2 login
+                    form(autocomplete="off" method="post")
+                        .control-form
+                            input(class= "main" type="text" name="check-username" placeholder="User Name")
+                            .error-username
+                        .control-form
+                            input(class= "main" type="password" name="check-email" placeholder="Password")
+                            .error-password
+                        .control-form
+                            input(type="checkbox" name="check-box" id="check")
+                            label(for="check") Remmber Me
+                            .error-terms
+                        .control-submit
+                            input(type="submit" name="login-submit" value="login")
+                    .other-account
+                        h4 Or Login With
+                        div(class="social flex-center")
+                            p.face Facebook
+                            p.twitter Twitter
+                            p.google Google+
+                        p.account Don't have an account ? 
+                            a(href="../sign-up-page/sign-up.html") Sign Up
+        include ../includs/FooterFile/footer.pug
+        script(src="../includs/headerFile/js/toggleheader.js")

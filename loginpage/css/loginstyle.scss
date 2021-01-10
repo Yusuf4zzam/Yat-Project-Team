@@ -1,0 +1,199 @@
+@import url(../../includs/FooterFile/css/footerstyle.css);
+@import url(../../includs/headerFile/css/headerstyle.css);
+@import url(../../globalrules/framework.css);
+
+// Global Rules
+$maintextcolor: #D64481;
+
+@keyframes animate {
+    0% {
+        background-position: bottom;
+    }
+    25% {
+        background-position: top;
+    }
+    50% {
+        background-position: bottom;
+    }
+    75% {
+        background-position: top;
+    }
+    100% {
+        background-position: bottom;
+    }
+}
+.slider {
+    padding: 70px 0;
+    background: url(../images/background2.jpg) no-repeat;
+    background-size: cover;
+    animation: animate 20s infinite;
+    .container {
+        align-items: flex-start;
+        .global-form {
+            padding: 30px 15px;
+            background-color: rgba(0, 0, 0, .5);
+            border-radius: 4px;
+            .header {
+                text-align: center;
+                h2 {
+                    color: #FFF;
+                    text-transform: uppercase;
+                    margin-bottom: 20px;
+                    letter-spacing: 1px;
+                }
+            }
+            form {
+                .control-submit {
+                    text-align: center;
+                    input {
+                        margin: auto;
+                        padding: 7px 70px;
+                        text-transform: uppercase;
+                        color: #FFF;
+                        background: $maintextcolor;
+                        border: none;
+                        border-radius: 3px;
+                        cursor: pointer;
+                        font-size: 15px;
+                        letter-spacing: 1px;
+                        &:focus {
+                            outline: none;
+                        }
+                    }    
+                }
+                // Start Control Statment Box
+
+                // if True
+                .control-form.success {
+                    input {
+                        border: 1px solid #2ecc71 !important;
+                    }
+                    .fa-check-circle {
+                        visibility: visible !important;
+                        color: #2ecc71;
+                    }
+                    div {
+                        visibility: hidden;
+                    }
+                }
+                
+                // if False
+                .control-form.error {
+                    input {
+                        border: 1px solid #e74c3d !important;
+                    }
+                    .fa-exclamation-circle {
+                        visibility: visible !important;
+                        color: #e74c3d;
+                    }
+                    div {
+                        color: #e74c3d;
+                        visibility: visible;
+                    }
+                }
+                // End Control Statment Box
+                
+                .control-form {
+                    position: relative;
+                    label {
+                        display: inline-block;
+                        font-size: 15px;
+                        color: #FFF;
+                        margin-left: 5px;
+                    }
+                    .main {
+                        width: 100%;
+                        padding: 10px 7px;
+                        background: rgba(0, 0, 0, .3);
+                        border: 1px solid #333;
+                        border-radius: 3px;
+                        color: #FFF;
+                        &::-webkit-input-placeholder {
+                            color: #DDD;
+                        }
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                    i {
+                        position: absolute;
+                        top: 10px;
+                        right: 7px;
+                        visibility: hidden;
+                    }
+                    div {
+                        margin: 5px 0 15px;
+                        font-size: 14px;
+                        visibility: hidden;
+                    }
+                }
+            }
+            .other-account {
+                text-align: center;
+                h4 {
+                    color: #FFF;
+                    margin: 20px 0 10px;
+                }
+                p.account {
+                    margin-top: 20px;
+                    color: #FFF;
+                    a {
+                        color: $maintextcolor;
+                        cursor: pointer;
+                    }
+                }
+                .social {
+                    width: 100%;
+                    color: #FFF;
+                    p {
+                        padding: 7px 40px;
+                        margin-right: 5px;
+                        border-radius: 3px;
+                        cursor: pointer;
+                        &:first-of-type {
+                            background: #3b5999;
+                        }
+                        &:nth-of-type(2) {
+                            background: #55acee;
+                        }
+                        &:last-of-type {
+                            background: #dd4b39;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 767px) {
+    .slider {
+        .login,
+        .register {
+            width: 100% !important;
+        }
+    }
+}
+@media (min-width: 767px) and (max-width: 991px) {
+    .slider {
+        .login,
+        .register {
+            width: 80% !important;
+        }
+    }  
+}
+@media (min-width: 767px) and (max-width: 991px) {
+    .slider {
+        .login,
+        .register {
+            width: 80% !important;
+        }
+    }  
+}
+@media (min-width: 1200px){
+    .slider {
+        .login,
+        .register {
+            width: 50% !important;
+        }
+    }  
+}
