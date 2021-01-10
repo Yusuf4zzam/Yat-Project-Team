@@ -10,9 +10,8 @@ const check = document.getElementById("check-terms");
 
 
 form.addEventListener('submit', (e) => {
-    e.preventDefault();
     checkInputs();
-    e.stopPropagation();
+    e.preventDefault();
 });
 
 function checkInputs() {
@@ -21,6 +20,7 @@ function checkInputs() {
     const emailvalue = email.value.trim();
     const passwordValue = password.value.trim();
     const passwrod2Value = password2.value.trim();
+    const formControl = document.querySelectorAll(".control-form");
 
     // Check username value
     if(userNameValue === "") {
@@ -51,8 +51,8 @@ function checkInputs() {
     if(passwordValue === "") {
         setErrorFor(password, "Password Cannot Be Empty");
     }
-    else if (passwordValue.length < 14) {
-        setErrorFor(password, "Password cannot be less than 14");
+    else if (passwordValue.length < 8) {
+        setErrorFor(password, "Password cannot be less than 8");
     }
     else {
         setSeccessFor(password)
@@ -75,6 +75,11 @@ function checkInputs() {
     }
     else {
         setSeccessFor(check);
+    }
+
+    // Check If True
+    if(formControl[0].classList.contains("success") && formControl[1].classList.contains("success") && formControl[2].classList.contains("success") && formControl[3].classList.contains("success") && formControl[4].classList.contains("success")) {
+        form.submit();
     }
 }
 
