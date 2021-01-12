@@ -3,6 +3,7 @@ html
     head
         title Home
         link(rel="stylesheet", href="css/style.css")
+        link(rel="icon" href="../includs/icon-page1.jpg" sizes="96x96")
         script(src="https://kit.fontawesome.com/112897e29a.js" crossorigin="anonymous")
     body
         include ../includs/headerFile/header.pug
@@ -12,9 +13,10 @@ html
             img(class="overlay" src="images/slide-bg.png", alt="")
             div(class="container flexbetween")
                 .content
-                    h1 Buying Games <br/>
-                        span WIN REWARD
-                    p We develop effective plans to move your customers behaviour. customer can be alwayes his profit.
+                    h1 Buying Games
+                    h1 
+                       span Get Fun
+                    p We put the best games for you for your enjoyment, buy, play, and win.
                     a(href="" class="global-hover") Get Started
                 .image
                     img(src="images/s1.png", alt="")
@@ -55,26 +57,26 @@ html
                         .image
                             img(src="images/ab-icon.png", alt="")
                         .text
-                            h2 Live Online Game
-                            p Replacing a maintains the amount of lines. When replacing a selection. help agencies to define. define their new business objectives and then.
+                            h2 Sale Games
+                            p We sale games for you to make you happy so buy some games and get fun with friends.
                     .box
                         .image
                             img(src="images/ab-icon2.png", alt="")
                         .text
                             h2 Instant Bonus
-                            p Replacing a maintains the amount of lines. When replacing a selection. help agencies to define. define their new business objectives and then.
+                            p We made it easy for you to buy games, buy games now and get your bonus for buying free games after that.
                     .box
                         .image
                             img(src="images/ab-icon6.png", alt="")
                         .text
                             h2 Live Support
-                            p Replacing a maintains the amount of lines. When replacing a selection. help agencies to define. define their new business objectives and then.
+                            p We are always here for you for your direct support. If you have any problem, contact us now.
         //- Start Games Box
         .games
             .container
                 div(class="heading flex-center")
                     h2 Games
-                    p Dummy text is also used to demonstrate the appearance of different typefaces and layouts
+                    p Log in now and buy the games you want, and don't forget to have fun with your friends.
                 div(class="content flexbetween")
                     .box
                         img(src="https://wallpapercave.com/wp/wp4368683.jpg", alt="")
@@ -94,5 +96,58 @@ html
             .load-more
                 .container
                     a(href="") load more
+        
+        //- Start Bouns Box
+        .bouns
+            .container
+                div(class="heading flex-center")
+                    h2 Referral Bonus Level
+                    p Buy games and get your reward now, or get free games.
+
+                div(class="content flexbetween")
+                    .box
+                        a(href="")
+                            i(class="fas fa-briefcase bag")
+                        h2 Buy with $20 Get sale 10%
+                        h2 Bonus Reward
+                    .box
+                        a(href="")
+                            i(class="far fa-clone clone")
+                        h2 Buy with $40 Get sale 20%
+                        h2 Bonus Reward
+                    .box
+                        a(href="")
+                            i(class="far fa-chart-bar chart")
+                        h2 Buy with $80 Get sale 50%
+                        h2 Bonus Reward
+
+        //- Start Contact Box
+        .contact
+            .container
+                div(class="heading flex-center")
+                    h2 Contact Us
+                form(action="" class="flexbetween")
+                    input(type="text" name="username-contact" placeholder="Your Name")
+                    input(type="text" name="email-contact" placeholder="Your Email")
+                    textarea(name="message" placeholder="Your Message")
+                    button(name="submit-contact" type="submit" class="global-hover") Send Message
+        
+        //- Start Partner Box
+        .partner
+            .container
+                div(class="heading flex-center")
+                    h2 Games Partner
+                    p You can buy games through these currencies traded through the site.
+                div(class="content flexbetween")
+                    a(href="")
+                        img(src="images/1.png", alt="")
+                    a(href="")
+                        img(src="images/2.png", alt="")
+                    a(href="")
+                        img(src="images/3.png", alt="")
+                    a(href="")
+                        img(src="images/4.png", alt="")
+                    a(href="")
+                        img(src="images/5.png", alt="")
         include ../includs/FooterFile/footer.pug
         script(src="../includs/headerFile/js/toggleheader.js")

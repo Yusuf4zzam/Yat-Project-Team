@@ -7,6 +7,24 @@
   padding: 0;
 }
 
+html {
+  /* width */
+  /* Track */
+  /* Handle */
+}
+
+html ::-webkit-scrollbar {
+  width: 15px;
+}
+
+html ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+html ::-webkit-scrollbar-thumb {
+  background: #171627;
+}
+
 body {
   background: #171627;
   font-family: 'Open Sans', sans-serif;
@@ -77,6 +95,25 @@ body {
 .global-hover:hover {
   color: #D64481;
   background: none;
+}
+
+.heading {
+  margin-bottom: 50px;
+}
+
+.heading h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 40px;
+  color: #FFF;
+}
+
+.heading p {
+  width: 45%;
+  line-height: 1.5;
+  text-align: center;
+  color: #D1D1D1;
 }
 
 ul {

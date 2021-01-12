@@ -8,6 +8,26 @@
 }
 $bodyColor: #171627;
 $maintextcolor: #D64481;
+$first-bg-color:#171627;
+$second-bg-color: #131222;
+
+html {
+    /* width */
+    ::-webkit-scrollbar {
+        width: 15px;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: $first-bg-color;
+    }  
+}
+
 body {
     background: $bodyColor;
     font-family: 'Open Sans', sans-serif;
@@ -50,6 +70,23 @@ body {
     &:hover {
         color: $maintextcolor;
         background: none;
+    }
+}
+
+.heading {
+    margin-bottom: 50px;
+    h2 {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 40px;
+        color: #FFF;
+    }
+    p {
+        width: 45%;
+        line-height: 1.5;
+        text-align: center;
+        color: #D1D1D1;
     }
 }
 

@@ -53,7 +53,7 @@ $second-bg-color: #131222;
     .container {
         align-items: flex-start;
         .content {
-            width: 45%;
+            width: 40%;
             z-index: 99999;
             h1 {
                 font-size: 35px;
@@ -197,7 +197,7 @@ $second-bg-color: #131222;
                 .text {
                     margin-left: 15px;
                     h2 {
-                        margin-bottom: 15px;
+                        margin-bottom: 5px;
                         font-size: 21px;
                     }
                     p {
@@ -216,21 +216,6 @@ $second-bg-color: #131222;
     padding: 70px 0;
     color: #FFF;
     background: $first-bg-color;
-    .heading {
-        margin-bottom: 50px;
-        h2 {
-            width: 100%;
-            text-align: center;
-            margin-bottom: 15px;
-            font-size: 40px;
-        }
-        p {
-            width: 45%;
-            line-height: 1.5;
-            text-align: center;
-            color: #D1D1D1;
-        }
-    }
     .load-more {
         margin-top: 40px;
         padding: 20px 0;
@@ -272,9 +257,108 @@ $second-bg-color: #131222;
     }
 }
 
+// Start bouns Box
+.bouns {
+    padding: 70px 0;
+    background: $second-bg-color;
+    .box {
+        width: 27%;
+        text-align: center;
+        color: #FFF;
+        @each $selector, $color, $content in 
+        ("bag", #F39E40, "01"),
+        ("clone", #0098D7, "02"),
+        ("chart",#37A25F, "03") {
+            .#{$selector} {
+                color: $color;
+                &:after {
+                    content: $content;
+                    position: absolute;
+                    top: -7px;
+                    left: -3px;
+                    color: #FFF;
+                    background: $color;
+                    font-size: 18px;
+                    padding: 10px;
+                    border-radius: 50%;
+                }
+            }
+        }
+        a {
+            display: inline-block;
+            position: relative;
+            font-size: 40px;
+            padding: 20px 30px;
+            border-radius: 50%;
+            background: #26253F;
+            margin-bottom: 20px;
+        }
+    }
+}
 
+// Satrt Contact Box
+.contact {
+    padding: 70px 0;
+    background: $first-bg-color;
+    form {
+        input,
+        textarea {
+            padding: 10px;
+            border: 1px solid rgba(0, 0, 0, .1);
+            background: $second-bg-color;
+            color: #FFF;
+            &:focus {
+                outline: none;
+            }
+            &::placeholder {
+                color: #D1D1D1;
+            }              
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            max-height: 250px;
+            min-height: 150px;
+            resize: vertical;
+            /* width */
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
+            
+            /* Track */
+            &::-webkit-scrollbar-track {
+                background: #f1f1f1;
+                cursor: pointer;
+            }
+            
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: $first-bg-color;
+            }  
+        }
+        input {
+            width: 49%;
+            margin-bottom: 20px;
+            border-radius: 30px;
+        }
+        button {
+            margin: 20px auto 0;
+            padding: 10px 30px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-size: 16px;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+    }
+}
 
-
+// Satrt Partner Box
+.partner {
+    padding: 70px 0;
+    background: $second-bg-color;
+    margin-bottom: 70px;
+}
 
 
 
@@ -346,6 +430,41 @@ $second-bg-color: #131222;
             margin-bottom: 30px;
         }
     }
+    // Start Bouns Box
+    .bouns {
+        .heading {
+            p {
+                width: 100% !important;
+            }
+        }
+        .box {
+            width: 100% !important;
+            &:not(:last-of-type) {
+                margin-bottom: 70px;
+            }
+        }
+    }
+
+    // Start Contact Box
+    .contact {
+        input {
+            width: 100% !important;
+        }
+    }
+
+    // Start Partner Box
+    .partner {
+        p {
+            width: 100% !important;
+        }
+        .content.flexbetween {
+            justify-content: center !important;
+            a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
 }
 @media(min-width: 767px) and (max-width: 991px) {
     .slider {
@@ -386,9 +505,33 @@ $second-bg-color: #131222;
 
     // Start Games Box
     .games {
+        .heading {
+            p {
+                width: 80% !important;
+            }
+        }
         .box {
             width: 48% !important;
             margin-bottom: 30px;
+        }
+    }
+
+    // Start Bouns Box
+    .bouns {
+        .heading {
+            p {
+                width: 80% !important;
+            }
+        }
+    }
+
+    // Start Partner Box
+    .partner {
+        p {
+            width: 80% !important;
+        }
+        .content.flexbetween {
+            justify-content: center;
         }
     }
 }
