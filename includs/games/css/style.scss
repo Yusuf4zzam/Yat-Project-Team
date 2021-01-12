@@ -1,0 +1,89 @@
+@import url(../../includs/FooterFile/css/footerstyle.css);
+@import url(../../includs/headerFile/css/headerstyle.css);
+@import url(../../globalrules/framework.css);
+
+$maintextcolor: #D64481;
+$first-bg-color:#171627;
+$second-bg-color: #131222;
+
+// Start games Box
+.games {
+    padding: 70px 0;
+    color: #FFF;
+    background: $first-bg-color;
+    .load-more {
+        margin-top: 40px;
+        padding: 20px 0;
+        background: #131222;
+        text-align: center;
+        a {
+            text-decoration: none;
+            color: #FFF;
+            text-transform: uppercase;
+            font-size: 18px;
+            letter-spacing: 1px;
+            transition: .3s;
+            &:hover {
+                color:$maintextcolor;
+            }
+        }
+    }
+    .content {
+        a {
+            width: 32%;
+            display: inline-block;
+            margin-bottom: 30px;
+            text-decoration: none;
+            color: #FFF;
+        }
+        .box {
+            border-radius: 3px;
+            overflow: hidden;
+            img {
+                width: 100%;
+            }
+            .text {
+                margin-top: 10px;
+                padding: 0 10px;
+                h3 {
+                    margin-bottom: 5px;
+                }
+                p {
+                    color: #D1D1D1;
+                    font-size: 14px;
+                    line-height: 1.5;
+                }
+            }
+        }
+    }
+}
+// Rsponsive Design
+@media(max-width: 767px) {
+    // Start Games Box
+    .games {
+        .heading {
+            p {
+                width: 100% !important;
+            }
+        }
+        a {
+            width: 100% !important;
+            margin-bottom: 30px;
+        }
+    }
+}
+@media(min-width: 767px) and (max-width: 991px) {
+    // Start Games Box
+    .games {
+        .heading {
+            p {
+                width: 80% !important;
+            }
+        }
+        a {
+            width: 48% !important;
+            margin-bottom: 30px;
+        }
+    }
+
+}

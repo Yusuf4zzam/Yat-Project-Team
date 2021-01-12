@@ -217,6 +217,15 @@ header {
     }
 }
 
+.check-login {
+    padding: 10px 0;
+    font-size: 14px;
+    background: rgb(218, 203, 121);
+    border-bottom: 2px solid rgb(82, 72, 20);
+    i {
+        cursor: pointer;
+    }
+}
 @media (max-width: 767px) {
     header {
         .info {

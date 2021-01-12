@@ -251,6 +251,17 @@ header nav .container .toggle-button {
   cursor: pointer;
 }
 
+.check-login {
+  padding: 10px 0;
+  font-size: 14px;
+  background: #dacb79;
+  border-bottom: 2px solid #524814;
+}
+
+.check-login i {
+  cursor: pointer;
+}
+
 @media (max-width: 767px) {
   header .info .container {
     -webkit-box-pack: end !important;
