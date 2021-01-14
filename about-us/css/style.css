@@ -1,0 +1,55 @@
+@import url(../../includs/FooterFile/css/footerstyle.css);
+@import url(../../includs/headerFile/css/headerstyle.css);
+@import url(../../includs/about-us/css/style.css);
+@import url(../../includs/slider-pages/css/style.css);
+@import url(../../includs/globalrules/framework.css);
+.more-info {
+  text-align: center;
+  color: #FFF;
+  padding: 70px 0;
+}
+
+.more-info .box {
+  width: 32%;
+  padding: 50px 15px;
+  background: #26253F;
+  border-radius: 3px;
+}
+
+.more-info .box:nth-of-type(2) {
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+}
+
+.more-info .box h2 {
+  margin: 10px 0;
+}
+
+.more-info .box p {
+  color: #D1D1D1;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+@media (max-width: 767px) {
+  .more-info .box {
+    width: 100% !important;
+    margin-bottom: 30px;
+  }
+  .more-info .box:nth-of-type(2) {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+  .more-info .box {
+    width: 48% !important;
+    margin-bottom: 30px;
+  }
+  .more-info .box:nth-of-type(2) {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+/*# sourceMappingURL=style.css.map */

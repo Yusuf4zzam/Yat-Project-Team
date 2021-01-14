@@ -1,0 +1,74 @@
+doctype html
+html
+    head
+        title Settings
+        link(rel="stylesheet", href="css/style.css")
+        link(rel="icon" href="../includs/icon-page1.jpg" sizes="96x96")
+        script(src="https://kit.fontawesome.com/112897e29a.js" crossorigin="anonymous")
+    body
+        include ../includs/headerFile/header.pug
+
+        //- Start Slider Box
+        include ../includs/slider-pages/index.pug
+
+        //- Start Settings Box
+        .setting
+            div(class="container flex-center ")
+                .form
+                    div(class="text")
+                        h4
+                            i(class="fas fa-plus")
+                            i(class="fas fa-minus")
+                            |Change User Name
+                    form(action="" id="form-1")
+                        div(class="control-form")
+                            input(type="text" name="new name" placeholder="Type The New Name")
+                            .error-username error
+                            i(class="fas fa-check-circle")
+                            i(class="fas fa-exclamation-circle")
+                        button.global-hover Submit
+
+                .form
+                    div(class="text flex align-center")
+                        h4
+                            i(class="fas fa-plus")
+                            i(class="fas fa-minus")
+                            |Change Email
+                    form(action="" id="form-2")
+                        div(class="control-form")
+                            input(type="text" name="email" placeholder="Type New Email")
+                            .error-username error
+                            i(class="fas fa-check-circle")
+                            i(class="fas fa-exclamation-circle")
+                        button.global-hover Submit
+
+                .form
+                    div(class="text flex align-center")
+                        h4
+                            i(class="fas fa-plus")
+                            i(class="fas fa-minus")
+                            |Change Password
+                    form(action="" id="form-2")
+                        div(class="control-form")
+                            input(type="password" name="old-password" placeholder="Type Old Password")
+                            .error-username error
+                            i(class="fas fa-check-circle")
+                            i(class="fas fa-exclamation-circle")
+
+                        div(class="control-form")
+                            input(type="password" name="new-password" placeholder="Type The New Password")
+                            .error-username error
+                            i(class="fas fa-check-circle")
+                            i(class="fas fa-exclamation-circle")
+
+                        div(class="control-form")
+                            input(type="password" name="confirm-password" placeholder="Confirm Password")
+                            .error-username error
+                            i(class="fas fa-check-circle")
+                            i(class="fas fa-exclamation-circle")
+                        button.global-hover Submit
+
+        include ../includs/FooterFile/footer.pug
+        script(src="../includs/headerFile/js/toggleheader.js")
+        script(src="js/toggle.js")
+        script(src="../includs/TitleName/check-title.js")

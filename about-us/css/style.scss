@@ -1,0 +1,55 @@
+@import url(../../includs/FooterFile/css/footerstyle.css);
+@import url(../../includs/headerFile/css/headerstyle.css);
+@import url(../../includs/about-us/css/style.css);
+@import url(../../includs/slider-pages/css/style.css);
+@import url(../../includs/globalrules/framework.css);
+
+$maintextcolor: #D64481;
+$first-bg-color:#171627;
+$second-bg-color: #131222;
+
+.more-info {
+    text-align: center;
+    color: #FFF;
+    padding: 70px 0;
+    .box {
+        width: 32%;
+        padding: 50px 15px;
+        background: #26253F;
+        border-radius: 3px;
+        &:nth-of-type(2) {
+            transform: translateY(-50px);
+        }
+        h2 {
+            margin: 10px 0;
+        }
+        p {
+            color: #D1D1D1;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .more-info {
+        .box {
+            width: 100% !important;
+            margin-bottom: 30px;
+            &:nth-of-type(2) {
+                transform: translateY(0);
+            }
+        }
+    }
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+    .more-info {
+        .box {
+            width: 48% !important;
+            margin-bottom: 30px;
+            &:nth-of-type(2) {
+                transform: translateY(0);
+            }
+        }
+    }
+}

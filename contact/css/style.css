@@ -1,0 +1,9 @@
+@import url(../../includs/FooterFile/css/footerstyle.css);
+@import url(../../includs/headerFile/css/headerstyle.css);
+@import url(../../includs/slider-pages/css/style.css);
+@import url(../../includs/contact/css/style.css);
+@import url(../../includs/globalrules/framework.css);
+.contact {
+  padding: 70px 0;
+}
+/*# sourceMappingURL=style.css.map */

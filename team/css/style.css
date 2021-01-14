@@ -1,0 +1,82 @@
+@import url(../../includs/FooterFile/css/footerstyle.css);
+@import url(../../includs/headerFile/css/headerstyle.css);
+@import url(../../includs/contact/css/style.css);
+@import url(../../includs/slider-pages/css/style.css);
+@import url(../../includs/globalrules/framework.css);
+.team {
+  padding: 70px 0;
+  color: #FFF;
+  background: #131222;
+}
+
+.team .box {
+  width: 24%;
+  background: #26253F;
+  border-radius: 3px;
+  padding: 30px 15px;
+  text-align: center;
+}
+
+.team .box img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.team .box h2 {
+  margin: 15px 0;
+}
+
+.team .box p {
+  font-size: 14px;
+  color: #D1D1D1;
+}
+
+.team .box .links {
+  margin-top: 20px;
+}
+
+.team .box .links .facebook:hover {
+  color: #3b5999;
+}
+
+.team .box .links .insta:hover {
+  color: #e4405f;
+}
+
+.team .box .links .twitter:hover {
+  color: #55acee;
+}
+
+.team .box .links a {
+  display: inline-block;
+  font-size: 20px;
+  color: #FFF;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.team .box .links a:not(:last-of-type) {
+  margin-right: 25px;
+}
+
+@media (max-width: 767px) {
+  .team .box {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .heading p {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+  .team .box {
+    width: 48%;
+    margin-bottom: 30px;
+  }
+  .heading p {
+    width: 80% !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */

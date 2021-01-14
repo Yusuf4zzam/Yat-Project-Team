@@ -1,0 +1,147 @@
+@import url(../../includs/FooterFile/css/footerstyle.css);
+@import url(../../includs/headerFile/css/headerstyle.css);
+@import url(../../includs/slider-pages/css/style.css);
+@import url(../../includs/globalrules/framework.css);
+
+$maintextcolor: #D64481;
+$first-bg-color:#171627;
+$second-bg-color: #131222;
+
+.setting {
+    padding: 70px 0;
+    background: $second-bg-color;
+    .form {
+        width: 51%;
+        background: #26253F;
+        border-radius: 5px;
+        color: #FFF;
+        padding: 20px 20px;
+        margin-bottom: 30px;
+        text-align: center;
+
+        .text.active {
+            height: unset;
+            h4 {
+                color: $maintextcolor;
+                .fa-plus {
+                    display: none;
+                }
+                .fa-minus {
+                    display: inline-block;
+                }
+            }
+            +form {
+                margin-top: 15px;
+                display: block;
+            }
+        }
+
+        .text {
+            text-align: left;
+            h4 {
+                width: fit-content;
+                font-size: 18px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                &::selection {
+                    background: none;
+                    color: none;
+                }
+            }
+            i {
+                margin-right: 10px;
+                font-size: 11px;
+            }
+            .fa-minus {
+                display: none;
+            }
+        }
+
+        form {
+            display: none;
+        }
+
+        input {
+            width: 100%;
+            background: $second-bg-color;
+            border: 1px solid #000;
+            border-radius: 30px;
+            padding: 10px;
+            color: #FFF;
+            &:focus {
+                outline: none;
+            }
+            &::placeholder {
+                color: #D1D1D1;
+            }
+        }
+        button {
+            padding: 7px 50px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    }
+
+    .control-form {
+        position: relative;
+        i {
+            position: absolute;
+            top: 10px;
+            right: 7px;
+            visibility: hidden;
+        }
+        div {
+            margin: 5px 0 10px;
+            font-size: 14px;
+            visibility: hidden;
+        }
+    }
+}
+
+// if True
+.control-form.success {
+    input {
+        border: 1px solid #2ecc71 !important;
+    }
+    .fa-check-circle {
+        visibility: visible !important;
+        color: #2ecc71;
+    }
+    div {
+        visibility: hidden;
+    }
+}
+
+// if False
+.control-form.error {
+    input {
+        border: 1px solid #e74c3d !important;
+    }
+    .fa-exclamation-circle {
+        visibility: visible !important;
+        color: #e74c3d;
+    }
+    div {
+        color: #e74c3d;
+        visibility: visible;
+    }
+}
+// End Control Statment Box
+
+
+// Rsponsive Design
+@media(max-width: 767px) {
+    .heading {
+        p {
+            width: 100% !important;
+        }
+    }
+}
+@media(min-width: 767px) and (max-width: 991px) {
+    .heading {
+        p {
+            width: 80% !important;
+        }
+    }
+}

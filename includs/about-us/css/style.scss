@@ -1,0 +1,158 @@
+@import url(../../globalrules/framework.css);
+
+$maintextcolor: #D64481;
+$first-bg-color:#171627;
+$second-bg-color: #131222;
+
+// Start about-us Box
+.about-us {
+    color: #FFF;
+    padding: 70px 0;
+    background: $second-bg-color;
+    .container {
+        align-items: flex-start;
+        .left-box {
+            width: 45%;
+            img {
+                width: 100%;
+            }
+            p {
+                margin-top: 10px;
+                text-align: center;
+                color: #D1D1D1;
+                a {
+                    color: #FFF;
+                    transition: color .3s;
+                    &:hover {
+                        color: $maintextcolor;
+                    }
+                }
+            }
+        }
+        .right-box {
+            width: 48%;
+            .box {
+                padding: 30px 10px;
+                background: #26253F;
+                border-radius: 3px;
+                display: flex;
+                align-items: flex-start;
+                &:not(:last-of-type) {
+                    margin-bottom: 30px;
+                }
+                img {
+                    width: 70px;
+                }
+                .text {
+                    margin-left: 15px;
+                    h2 {
+                        margin-bottom: 5px;
+                        font-size: 21px;
+                    }
+                    p {
+                        line-height: 1.5;
+                        font-size: 15px;
+                        color: #D1D1D1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Start bouns Box
+.bouns {
+    padding: 70px 0;
+    background: $first-bg-color;
+    .box {
+        width: 27%;
+        text-align: center;
+        color: #FFF;
+        @each $selector, $color, $content in 
+        ("bag", #F39E40, "01"),
+        ("clone", #0098D7, "02"),
+        ("chart",#37A25F, "03") {
+            .#{$selector} {
+                color: $color;
+                &:after {
+                    content: $content;
+                    position: absolute;
+                    top: -7px;
+                    left: -3px;
+                    color: #FFF;
+                    background: $color;
+                    font-size: 18px;
+                    padding: 10px;
+                    border-radius: 50%;
+                }
+            }
+        }
+        a {
+            display: inline-block;
+            position: relative;
+            font-size: 40px;
+            padding: 20px 30px;
+            border-radius: 50%;
+            background: #26253F;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+// Rsponsive Design
+@media(max-width: 767px) {
+    // Start About-us Box
+    .about-us {
+        .container {
+            justify-content: center !important;
+        }
+        .left-box {
+            width: 80% !important;
+            order: 2;
+        }
+        .right-box {
+            width: 100% !important;
+            margin-bottom: 40px;
+        }
+    }
+    // Start Bouns Box
+    .bouns {
+        .heading {
+            p {
+                width: 100% !important;
+            }
+        }
+        .box {
+            width: 100% !important;
+            &:not(:last-of-type) {
+                margin-bottom: 70px;
+            }
+        }
+    }
+}
+@media(min-width: 767px) and (max-width: 991px) {
+    // Start About-us Box
+    .about-us {
+        .container {
+            justify-content: center !important;
+        }
+        .left-box {
+            width: 70% !important;
+            order: 2;
+        }
+        .right-box {
+            width: 100% !important;
+            margin-bottom: 40px;
+        }
+    }
+
+    // Start Bouns Box
+    .bouns {
+        .heading {
+            p {
+                width: 80% !important;
+            }
+        }
+    }
+
+}

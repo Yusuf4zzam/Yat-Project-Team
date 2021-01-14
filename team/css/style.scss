@@ -1,0 +1,86 @@
+@import url(../../includs/FooterFile/css/footerstyle.css);
+@import url(../../includs/headerFile/css/headerstyle.css);
+@import url(../../includs/contact/css/style.css);
+@import url(../../includs/slider-pages/css/style.css);
+@import url(../../includs/globalrules/framework.css);
+
+$maintextcolor: #D64481;
+$first-bg-color:#171627;
+$second-bg-color: #131222;
+
+.team {
+    padding: 70px 0;
+    color: #FFF;
+    background: $second-bg-color;
+    .box {
+        width: 24%;
+        background: #26253F;
+        border-radius: 3px;
+        padding: 30px 15px;
+        text-align: center;
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        h2 {
+            margin: 15px 0;
+        }
+        p {
+            font-size: 14px;
+            color: #D1D1D1;
+        }
+        .links {
+            margin-top: 20px;
+            @each $selector, $color in 
+            ("facebook", #3b5999),
+            ("insta", #e4405f),
+            ("twitter",#55acee) {
+                .#{$selector} {
+                    &:hover {
+                        color: $color;
+                    }
+                }
+            }
+            a {
+                display: inline-block;
+                font-size: 20px;
+                color: #FFF;
+                transition: .3s;
+                &:not(:last-of-type) {
+                    margin-right: 25px;
+                }
+            }
+        }
+    }
+}
+
+// Rsponsive Design
+@media(max-width: 767px) {
+    // Start Team Box
+    .team {
+        .box {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+    }
+    .heading {
+        p {
+            width: 100% !important;
+        }
+    }
+}
+@media(min-width: 767px) and (max-width: 991px) {
+    // Start Team Box
+    .team {
+        .box {
+            width: 48%;
+            margin-bottom: 30px;
+        }
+    }
+    .heading {
+        p {
+            width: 80% !important;
+        }
+    }
+}

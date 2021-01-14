@@ -1,0 +1,27 @@
+doctype html
+html
+    head
+        title Contact
+        link(rel="stylesheet", href="css/style.css")
+        link(rel="icon" href="../includs/icon-page1.jpg" sizes="96x96")
+        script(src="https://kit.fontawesome.com/112897e29a.js" crossorigin="anonymous")
+    body
+        include ../includs/headerFile/header.pug
+
+        //- Start Slider Box
+        include ../includs/slider-pages/index.pug
+
+        //- Start Terms Box
+        .contact
+            .container
+                div(class="heading flex-center")
+                    h2 Contact Us
+                form(action="" class="flexbetween")
+                    input(type="text" name="username-contact" placeholder="Your Name")
+                    input(type="text" name="email-contact" placeholder="Your Email")
+                    textarea(name="message" placeholder="Your Message")
+                    button(name="submit-contact" type="submit" class="global-hover") Send Message
+
+        include ../includs/FooterFile/footer.pug
+        script(src="../includs/headerFile/js/toggleheader.js")
+        script(src="../includs/TitleName/check-title.js")

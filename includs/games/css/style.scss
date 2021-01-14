@@ -10,11 +10,11 @@ $second-bg-color: #131222;
 .games {
     padding: 70px 0;
     color: #FFF;
-    background: $first-bg-color;
+    background: $second-bg-color;
     .load-more {
         margin-top: 40px;
         padding: 20px 0;
-        background: #131222;
+        background: $first-bg-color;
         text-align: center;
         a {
             text-decoration: none;

@@ -1,0 +1,74 @@
+@import url(../../includs/FooterFile/css/footerstyle.css);
+@import url(../../includs/headerFile/css/headerstyle.css);
+@import url(../../globalrules/framework.css);
+
+$maintextcolor: #D64481;
+$first-bg-color:#171627;
+$second-bg-color: #131222;
+
+// Satrt Contact Box
+.contact {
+    padding: 70px 0;
+    background: $first-bg-color;
+    form {
+        input,
+        textarea {
+            padding: 10px;
+            border: 1px solid rgba(0, 0, 0, .1);
+            background: $second-bg-color;
+            color: #FFF;
+            &:focus {
+                outline: none;
+            }
+            &::placeholder {
+                color: #D1D1D1;
+            }              
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            max-height: 250px;
+            min-height: 150px;
+            resize: vertical;
+            /* width */
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
+            
+            /* Track */
+            &::-webkit-scrollbar-track {
+                background: #f1f1f1;
+                cursor: pointer;
+            }
+            
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: $first-bg-color;
+            }  
+        }
+        input {
+            width: 49%;
+            margin-bottom: 20px;
+            border-radius: 30px;
+        }
+        button {
+            margin: 20px auto 0;
+            padding: 10px 30px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-size: 16px;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+    }
+}
+
+// Rsponsive Design
+@media(max-width: 767px) {
+    // Start Contact Box
+    .contact {
+        input {
+            width: 100% !important;
+        }
+    }
+}

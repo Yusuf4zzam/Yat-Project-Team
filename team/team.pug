@@ -1,0 +1,68 @@
+doctype html
+html
+    head
+        title Team
+        link(rel="stylesheet", href="css/style.css")
+        link(rel="icon" href="../includs/icon-page1.jpg" sizes="96x96")
+        script(src="https://kit.fontawesome.com/112897e29a.js" crossorigin="anonymous")
+    body
+        include ../includs/headerFile/header.pug
+
+        //- Start Slider Box
+        include ../includs/slider-pages/index.pug
+
+        //- Start Team Box
+        .team
+            .container
+                div(class="heading flex-center")
+                    h2 Our Team Member
+                    p Dummy text is also used to demonstrate the appearance of different typefaces and layouts
+                div(class="content flexbetween")
+                    .box
+                        img(src="images/t1.jpg", alt="")
+                        h2 Yusuf Azzam
+                        p Front-End-Developer
+                        .links
+                            a(href="" class="facebook")
+                                i(class="fab fa-facebook-f")
+                            a(href="" class="insta")
+                                i(class="fab fa-instagram")
+                            a(href="" class="twitter")
+                                i(class="fab fa-twitter")
+                    .box
+                        img(src="images/t2.jpg", alt="")
+                        h2 Mokhtar Elmahdy
+                        p Front-End-Developer
+                        .links
+                            a(href="" class="facebook")
+                                i(class="fab fa-facebook-f")
+                            a(href="" class="insta")
+                                i(class="fab fa-instagram")
+                            a(href="" class="twitter")
+                                i(class="fab fa-twitter")
+                    .box
+                        img(src="images/t3.jpg", alt="")
+                        h2 Hager abdelaliem
+                        p Back-End-Developer
+                        .links
+                            a(href="" class="facebook")
+                                i(class="fab fa-facebook-f")
+                            a(href="" class="insta")
+                                i(class="fab fa-instagram")
+                            a(href="" class="twitter")
+                                i(class="fab fa-twitter")
+                    .box
+                        img(src="images/t4.jpg", alt="")
+                        h2 Hadeer Ali
+                        p Back-End-Developer
+                        .links
+                            a(href="" class="facebook")
+                                i(class="fab fa-facebook-f")
+                            a(href="" class="insta")
+                                i(class="fab fa-instagram")
+                            a(href="" class="twitter")
+                                i(class="fab fa-twitter")
+
+        include ../includs/FooterFile/footer.pug
+        script(src="../includs/headerFile/js/toggleheader.js")
+        script(src="../includs/TitleName/check-title.js")

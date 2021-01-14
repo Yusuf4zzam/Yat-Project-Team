@@ -43,34 +43,9 @@ html
                         h2 3318+
                         p daily reward
 
-        //- Start About-Us Box
-        .about-us
-            div(class="container flexbetween")
-                .left-box
-                    .image
-                        img(src="images/ab.jpg", alt="")
-                    .text
-                        p If you need know more about XGames 
-                            a(href="") Click here
-                .right-box
-                    .box
-                        .image
-                            img(src="images/ab-icon.png", alt="")
-                        .text
-                            h2 Sale Games
-                            p We sale games for you to make you happy so buy some games and get fun with friends.
-                    .box
-                        .image
-                            img(src="images/ab-icon2.png", alt="")
-                        .text
-                            h2 Instant Bonus
-                            p We made it easy for you to buy games, buy games now and get your bonus for buying free games after that.
-                    .box
-                        .image
-                            img(src="images/ab-icon6.png", alt="")
-                        .text
-                            h2 Live Support
-                            p We are always here for you for your direct support. If you have any problem, contact us now.
+        //- Start About US Box
+        include ../includs/about-us/index.pug
+        
         //- Start Games Box
         .games
             .container
@@ -99,42 +74,10 @@ html
             .load-more
                 .container
                     a(href="../games/index.html") load more
-        
-        //- Start Bouns Box
-        .bouns
-            .container
-                div(class="heading flex-center")
-                    h2 Referral Bonus Level
-                    p Buy games and get your reward now, or get free games.
-
-                div(class="content flexbetween")
-                    .box
-                        a(href="")
-                            i(class="fas fa-briefcase bag")
-                        h2 Buy with $20 Get
-                        h2 Discount 10%
-                    .box
-                        a(href="")
-                            i(class="far fa-clone clone")
-                        h2 Buy with $40 Get 
-                        h2 Discount 20%
-                    .box
-                        a(href="")
-                            i(class="far fa-chart-bar chart")
-                        h2 Buy with $80 Get 
-                        h2 Discount 50%
 
         //- Start Contact Box
-        .contact
-            .container
-                div(class="heading flex-center")
-                    h2 Contact Us
-                form(action="" class="flexbetween")
-                    input(type="text" name="username-contact" placeholder="Your Name")
-                    input(type="text" name="email-contact" placeholder="Your Email")
-                    textarea(name="message" placeholder="Your Message")
-                    button(name="submit-contact" type="submit" class="global-hover") Send Message
-        
+        include ../includs/contact/contact.pug
+
         //- Start Partner Box
         .partner
             .container

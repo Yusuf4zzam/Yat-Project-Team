@@ -1,6 +1,8 @@
 @import url(../../includs/FooterFile/css/footerstyle.css);
 @import url(../../includs/headerFile/css/headerstyle.css);
+@import url(../../includs/contact/css/style.css);
 @import url(../../includs/games/css/style.css);
+@import url(../../includs/about-us/css/style.css);
 @import url(../../globalrules/framework.css);
 
 $maintextcolor: #D64481;
@@ -76,6 +78,9 @@ $second-bg-color: #131222;
                 letter-spacing: 1px;
                 padding: 10px 20px;
                 border-radius: 3px;
+                &:hover {
+                    color: $maintextcolor;
+                }
             }
         }
         .image {
@@ -156,169 +161,12 @@ $second-bg-color: #131222;
     }
 }
 
-// Start about-us Box
-.about-us {
-    color: #FFF;
-    padding: 70px 0;
-    background: $second-bg-color;
-    .container {
-        align-items: flex-start;
-        .left-box {
-            width: 45%;
-            img {
-                width: 100%;
-            }
-            p {
-                margin-top: 10px;
-                text-align: center;
-                color: #D1D1D1;
-                a {
-                    color: #FFF;
-                    transition: color .3s;
-                    &:hover {
-                        color: $maintextcolor;
-                    }
-                }
-            }
-        }
-        .right-box {
-            width: 48%;
-            .box {
-                padding: 30px 10px;
-                background: #26253F;
-                border-radius: 3px;
-                display: flex;
-                align-items: flex-start;
-                &:not(:last-of-type) {
-                    margin-bottom: 30px;
-                }
-                img {
-                    width: 70px;
-                }
-                .text {
-                    margin-left: 15px;
-                    h2 {
-                        margin-bottom: 5px;
-                        font-size: 21px;
-                    }
-                    p {
-                        line-height: 1.5;
-                        font-size: 15px;
-                        color: #D1D1D1;
-                    }
-                }
-            }
-        }
-    }
-}
-
-// Start bouns Box
-.bouns {
-    padding: 70px 0;
-    background: $second-bg-color;
-    .box {
-        width: 27%;
-        text-align: center;
-        color: #FFF;
-        @each $selector, $color, $content in 
-        ("bag", #F39E40, "01"),
-        ("clone", #0098D7, "02"),
-        ("chart",#37A25F, "03") {
-            .#{$selector} {
-                color: $color;
-                &:after {
-                    content: $content;
-                    position: absolute;
-                    top: -7px;
-                    left: -3px;
-                    color: #FFF;
-                    background: $color;
-                    font-size: 18px;
-                    padding: 10px;
-                    border-radius: 50%;
-                }
-            }
-        }
-        a {
-            display: inline-block;
-            position: relative;
-            font-size: 40px;
-            padding: 20px 30px;
-            border-radius: 50%;
-            background: #26253F;
-            margin-bottom: 20px;
-        }
-    }
-}
-
-// Satrt Contact Box
-.contact {
-    padding: 70px 0;
-    background: $first-bg-color;
-    form {
-        input,
-        textarea {
-            padding: 10px;
-            border: 1px solid rgba(0, 0, 0, .1);
-            background: $second-bg-color;
-            color: #FFF;
-            &:focus {
-                outline: none;
-            }
-            &::placeholder {
-                color: #D1D1D1;
-            }              
-        }
-        textarea {
-            width: 100%;
-            height: 200px;
-            max-height: 250px;
-            min-height: 150px;
-            resize: vertical;
-            /* width */
-            &::-webkit-scrollbar {
-                width: 10px;
-            }
-            
-            /* Track */
-            &::-webkit-scrollbar-track {
-                background: #f1f1f1;
-                cursor: pointer;
-            }
-            
-            /* Handle */
-            &::-webkit-scrollbar-thumb {
-                background: $first-bg-color;
-            }  
-        }
-        input {
-            width: 49%;
-            margin-bottom: 20px;
-            border-radius: 30px;
-        }
-        button {
-            margin: 20px auto 0;
-            padding: 10px 30px;
-            border-radius: 3px;
-            text-transform: uppercase;
-            font-size: 16px;
-            letter-spacing: 1px;
-            cursor: pointer;
-        }
-    }
-}
-
 // Satrt Partner Box
 .partner {
     padding: 70px 0;
     background: $second-bg-color;
     margin-bottom: 70px;
 }
-
-
-
-
-
 
 // Rsponsive Design
 @media(max-width: 767px) {
@@ -358,43 +206,6 @@ $second-bg-color: #131222;
         }
     }   
 
-    // Start About-us Box
-    .about-us {
-        .container {
-            justify-content: center !important;
-        }
-        .left-box {
-            width: 80% !important;
-            order: 2;
-        }
-        .right-box {
-            width: 100% !important;
-            margin-bottom: 40px;
-        }
-    }
-
-    // Start Bouns Box
-    .bouns {
-        .heading {
-            p {
-                width: 100% !important;
-            }
-        }
-        .box {
-            width: 100% !important;
-            &:not(:last-of-type) {
-                margin-bottom: 70px;
-            }
-        }
-    }
-
-    // Start Contact Box
-    .contact {
-        input {
-            width: 100% !important;
-        }
-    }
-
     // Start Partner Box
     .partner {
         p {
@@ -428,30 +239,6 @@ $second-bg-color: #131222;
         .box {
             width: 48.5% !important;
             margin-bottom: 30px;
-        }
-    }
-
-    // Start About-us Box
-    .about-us {
-        .container {
-            justify-content: center !important;
-        }
-        .left-box {
-            width: 70% !important;
-            order: 2;
-        }
-        .right-box {
-            width: 100% !important;
-            margin-bottom: 40px;
-        }
-    }
-
-    // Start Bouns Box
-    .bouns {
-        .heading {
-            p {
-                width: 80% !important;
-            }
         }
     }
 

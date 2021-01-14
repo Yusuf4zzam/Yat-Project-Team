@@ -1,0 +1,87 @@
+@import url(../../includs/FooterFile/css/footerstyle.css);
+@import url(../../includs/headerFile/css/headerstyle.css);
+@import url(../../globalrules/framework.css);
+.contact {
+  padding: 70px 0;
+  background: #171627;
+}
+
+.contact form input,
+.contact form textarea {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #131222;
+  color: #FFF;
+}
+
+.contact form input:focus,
+.contact form textarea:focus {
+  outline: none;
+}
+
+.contact form input::-webkit-input-placeholder,
+.contact form textarea::-webkit-input-placeholder {
+  color: #D1D1D1;
+}
+
+.contact form input:-ms-input-placeholder,
+.contact form textarea:-ms-input-placeholder {
+  color: #D1D1D1;
+}
+
+.contact form input::-ms-input-placeholder,
+.contact form textarea::-ms-input-placeholder {
+  color: #D1D1D1;
+}
+
+.contact form input::placeholder,
+.contact form textarea::placeholder {
+  color: #D1D1D1;
+}
+
+.contact form textarea {
+  width: 100%;
+  height: 200px;
+  max-height: 250px;
+  min-height: 150px;
+  resize: vertical;
+  /* width */
+  /* Track */
+  /* Handle */
+}
+
+.contact form textarea::-webkit-scrollbar {
+  width: 10px;
+}
+
+.contact form textarea::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  cursor: pointer;
+}
+
+.contact form textarea::-webkit-scrollbar-thumb {
+  background: #171627;
+}
+
+.contact form input {
+  width: 49%;
+  margin-bottom: 20px;
+  border-radius: 30px;
+}
+
+.contact form button {
+  margin: 20px auto 0;
+  padding: 10px 30px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .contact input {
+    width: 100% !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,117 @@
+@import url(../../includs/FooterFile/css/footerstyle.css);
+@import url(../../includs/headerFile/css/headerstyle.css);
+@import url(../../includs/slider-pages/css/style.css);
+@import url(../../includs/globalrules/framework.css);
+.faq {
+  padding: 70px 0;
+  color: #FFF;
+  background: #131222;
+}
+
+.faq .content {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.faq .content:not(:last-of-type) {
+  margin-bottom: 70px;
+}
+
+.faq .content .left-box {
+  width: 60%;
+}
+
+.faq .content .left-box > div {
+  padding: 15px;
+  background: #26253F;
+  border-radius: 5px;
+}
+
+.faq .content .left-box .head {
+  margin-bottom: 20px;
+}
+
+.faq .content .left-box .head h2 {
+  font-weight: normal;
+}
+
+.faq .content .left-box .text.active {
+  height: unset;
+}
+
+.faq .content .left-box .text.active h4 {
+  color: #D64481;
+}
+
+.faq .content .left-box .text.active h4 .fa-plus {
+  display: none;
+}
+
+.faq .content .left-box .text.active h4 .fa-minus {
+  display: inline-block;
+}
+
+.faq .content .left-box .text {
+  height: 52px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.faq .content .left-box .text h4 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.faq .content .left-box .text h4 i {
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.faq .content .left-box .text h4 .fa-minus {
+  display: none;
+}
+
+.faq .content .left-box .text p {
+  color: #D1D1D1;
+  line-height: 1.5;
+  margin-top: 20px;
+  font-size: 14px;
+  padding-left: 20px;
+}
+
+.faq .content .right-box {
+  width: 35%;
+  background: #26253F;
+  border-radius: 5px;
+  padding: 20px 15px;
+}
+
+.faq .content .right-box p {
+  font-size: 14px;
+  color: #D1D1D1;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+@media (max-width: 767px) {
+  .content .left-box,
+  .content .right-box {
+    width: 100% !important;
+  }
+  .content .left-box {
+    margin-bottom: 30px;
+  }
+  .heading p {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+  .heading p {
+    width: 80% !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -12,6 +12,7 @@ $first-bg-color:#171627;
 $second-bg-color: #131222;
 
 html {
+    scroll-behavior: smooth;
     /* width */
     ::-webkit-scrollbar {
         width: 15px;

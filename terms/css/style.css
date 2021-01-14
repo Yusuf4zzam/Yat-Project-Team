@@ -1,0 +1,44 @@
+@import url(../../includs/FooterFile/css/footerstyle.css);
+@import url(../../includs/headerFile/css/headerstyle.css);
+@import url(../../includs/slider-pages/css/style.css);
+@import url(../../includs/globalrules/framework.css);
+.terms {
+  padding: 70px 0;
+  color: #FFF;
+  background: #131222;
+}
+
+.terms .content:not(:last-of-type) {
+  margin-bottom: 30px;
+}
+
+.terms .content span {
+  padding-top: 5px;
+  color: #D64481;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.terms .content .text {
+  margin-left: 15px;
+}
+
+.terms .content .text p {
+  margin-top: 10px;
+  line-height: 1.5;
+  color: #D1D1D1;
+  font-size: 14px;
+}
+
+@media (max-width: 767px) {
+  .heading p {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+  .heading p {
+    width: 80% !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */

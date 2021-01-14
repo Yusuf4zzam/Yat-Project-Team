@@ -1,0 +1,49 @@
+@import url(../../includs/FooterFile/css/footerstyle.css);
+@import url(../../includs/headerFile/css/headerstyle.css);
+@import url(../../includs/slider-pages/css/style.css);
+@import url(../../includs/globalrules/framework.css);
+
+$maintextcolor: #D64481;
+$first-bg-color:#171627;
+$second-bg-color: #131222;
+
+.terms {
+    padding: 70px 0;
+    color: #FFF;
+    background: $second-bg-color;
+    .content {
+        &:not(:last-of-type) {
+            margin-bottom: 30px;
+        }
+        span {
+            padding-top: 5px;
+            color: $maintextcolor;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .text {
+            margin-left: 15px;
+            p {
+                margin-top: 10px;
+                line-height: 1.5;
+                color: #D1D1D1;
+                font-size: 14px;
+            }
+        }
+    }
+}
+// Rsponsive Design
+@media(max-width: 767px) {
+    .heading {
+        p {
+            width: 100% !important;
+        }
+    }
+}
+@media(min-width: 767px) and (max-width: 991px) {
+    .heading {
+        p {
+            width: 80% !important;
+        }
+    }
+}

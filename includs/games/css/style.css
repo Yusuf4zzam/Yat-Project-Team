@@ -4,13 +4,13 @@
 .games {
   padding: 70px 0;
   color: #FFF;
-  background: #171627;
+  background: #131222;
 }
 
 .games .load-more {
   margin-top: 40px;
   padding: 20px 0;
-  background: #131222;
+  background: #171627;
   text-align: center;
 }
 

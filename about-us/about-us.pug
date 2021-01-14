@@ -1,0 +1,35 @@
+doctype html
+html
+    head
+        title About Us
+        link(rel="stylesheet", href="css/style.css")
+        link(rel="icon" href="../includs/icon-page1.jpg" sizes="96x96")
+        script(src="https://kit.fontawesome.com/112897e29a.js" crossorigin="anonymous")
+    body
+        include ../includs/headerFile/header.pug
+
+        //- Start Slider Box
+        include ../includs/slider-pages/index.pug
+
+        //- Start About US Box
+        .more-info 
+            .container
+                div(class="content flexbetween")
+                    .box
+                        img(src="images/h1.png", alt="")
+                        h2 Get access
+                        p Aspernatur sit adipisci quaerat unde at neque Redug Lagre dolor sit amet consectetu. Agencies to define their new business objectives and then create
+                    .box
+                        img(src="images/h2.png", alt="")
+                        h2 Enter games
+                        p Aspernatur sit adipisci quaerat unde at neque Redug Lagre dolor sit amet consectetu. Agencies to define their new business objectives and then create
+                    .box
+                        img(src="images/h3.png", alt="")
+                        h2 Win Award
+                        p Aspernatur sit adipisci quaerat unde at neque Redug Lagre dolor sit amet consectetu. Agencies to define their new business objectives and then create
+
+        include ../includs/about-us/index.pug
+
+        include ../includs/FooterFile/footer.pug
+        script(src="../includs/headerFile/js/toggleheader.js")
+        script(src="../includs/TitleName/check-title.js")

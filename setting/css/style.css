@@ -1,0 +1,172 @@
+@import url(../../includs/FooterFile/css/footerstyle.css);
+@import url(../../includs/headerFile/css/headerstyle.css);
+@import url(../../includs/slider-pages/css/style.css);
+@import url(../../includs/globalrules/framework.css);
+.setting {
+  padding: 70px 0;
+  background: #131222;
+}
+
+.setting .form {
+  width: 51%;
+  background: #26253F;
+  border-radius: 5px;
+  color: #FFF;
+  padding: 20px 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.setting .form .text.active {
+  height: unset;
+}
+
+.setting .form .text.active h4 {
+  color: #D64481;
+}
+
+.setting .form .text.active h4 .fa-plus {
+  display: none;
+}
+
+.setting .form .text.active h4 .fa-minus {
+  display: inline-block;
+}
+
+.setting .form .text.active + form {
+  margin-top: 15px;
+  display: block;
+}
+
+.setting .form .text {
+  text-align: left;
+}
+
+.setting .form .text h4 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 18px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.setting .form .text h4::-moz-selection {
+  background: none;
+  color: none;
+}
+
+.setting .form .text h4::selection {
+  background: none;
+  color: none;
+}
+
+.setting .form .text i {
+  margin-right: 10px;
+  font-size: 11px;
+}
+
+.setting .form .text .fa-minus {
+  display: none;
+}
+
+.setting .form form {
+  display: none;
+}
+
+.setting .form input {
+  width: 100%;
+  background: #131222;
+  border: 1px solid #000;
+  border-radius: 30px;
+  padding: 10px;
+  color: #FFF;
+}
+
+.setting .form input:focus {
+  outline: none;
+}
+
+.setting .form input::-webkit-input-placeholder {
+  color: #D1D1D1;
+}
+
+.setting .form input:-ms-input-placeholder {
+  color: #D1D1D1;
+}
+
+.setting .form input::-ms-input-placeholder {
+  color: #D1D1D1;
+}
+
+.setting .form input::placeholder {
+  color: #D1D1D1;
+}
+
+.setting .form button {
+  padding: 7px 50px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.setting .control-form {
+  position: relative;
+}
+
+.setting .control-form i {
+  position: absolute;
+  top: 10px;
+  right: 7px;
+  visibility: hidden;
+}
+
+.setting .control-form div {
+  margin: 5px 0 10px;
+  font-size: 14px;
+  visibility: hidden;
+}
+
+.control-form.success input {
+  border: 1px solid #2ecc71 !important;
+}
+
+.control-form.success .fa-check-circle {
+  visibility: visible !important;
+  color: #2ecc71;
+}
+
+.control-form.success div {
+  visibility: hidden;
+}
+
+.control-form.error input {
+  border: 1px solid #e74c3d !important;
+}
+
+.control-form.error .fa-exclamation-circle {
+  visibility: visible !important;
+  color: #e74c3d;
+}
+
+.control-form.error div {
+  color: #e74c3d;
+  visibility: visible;
+}
+
+@media (max-width: 767px) {
+  .heading p {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+  .heading p {
+    width: 80% !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */
