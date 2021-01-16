@@ -80,11 +80,15 @@ $second-bg-color: #131222;
             padding: 7px 50px;
             border-radius: 3px;
             cursor: pointer;
+            &:focus {
+                outline: none;
+            }
         }
     }
 
     .control-form {
         position: relative;
+        text-align: left;
         i {
             position: absolute;
             top: 10px;
@@ -132,16 +136,12 @@ $second-bg-color: #131222;
 
 // Rsponsive Design
 @media(max-width: 767px) {
-    .heading {
-        p {
-            width: 100% !important;
-        }
+    .form {
+        width: 100% !important;
     }
 }
 @media(min-width: 767px) and (max-width: 991px) {
-    .heading {
-        p {
-            width: 80% !important;
-        }
+    .form {
+        width: 80% !important;
     }
 }

@@ -1,0 +1,13 @@
+@import url(../../includs/headerFile/css/headerstyle.css);
+@import url(../../includs/FooterFile/css/footerstyle.css);
+@import url(../../includs/games-slider/css/style.css);
+@import url(../../globalrules/framework.css);
+
+$maintextcolor: #D64481;
+$first-bg-color:#171627;
+$second-bg-color: #131222;
+
+.slider {
+    background: url(../images/slider.jpg);
+    background-size: cover;
+}

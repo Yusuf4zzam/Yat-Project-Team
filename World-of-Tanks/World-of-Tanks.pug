@@ -1,0 +1,52 @@
+doctype html
+html
+    head
+        <meta charset="UTF-8">
+        <meta name="description" content="Are you a lover of tank-fights? If so, World of Tanks is the perfect free online PC game for you. World of Tanks is a MMO war game that features 20th century armored vehicles including light armored vehicles, to heavy tanks and self propelled guns.">
+        <meta name="keywords" content="ExGames, World of Tanks">
+        <meta name="author" content="Yusuf & Mokhtar & Hager & Hadeer">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        title World of Tanks
+        link(rel="stylesheet", href="css/style.css")
+        link(rel="icon" href="../includs/icon-page1.jpg" sizes="96x96")
+        script(src="https://kit.fontawesome.com/112897e29a.js" crossorigin="anonymous")
+    body
+        include ../includs/headerFile/header.pug
+
+        //- Start Slider Box
+        div(class="slider")
+            .overlay
+            div(class="container flex align-center")
+                .content
+                    h1.check-heading-page
+                    p Home 
+                        i(class="fas fa-chevron-right")
+                        |Games
+                        i(class="fas fa-chevron-right")
+                        span.check-text-page
+        .game
+            .container
+                div(class="head flex align-center")
+                    .image
+                        img(src="images/icon.jpg", alt="")
+                    .text
+                        h3 World of Tanks
+                        .stars
+                            i(class="fas fa-star")
+                            i(class="fas fa-star")
+                            i(class="fas fa-star")
+                            i(class="fas fa-star")
+                            i(class="fas fa-star")
+                .details
+                    p Are you a lover of tank-fights? If so, World of Tanks is the perfect free online PC game for you. World of Tanks is a MMO war game that features 20th century armored vehicles including light armored vehicles, to heavy tanks and self propelled guns.
+                .link
+                    a(class="global-hover" download="images/slider.jpg" href="data:application/octet-stream;base64,PD94ANDSOON") Download
+
+        include ../includs/FooterFile/footer.pug
+        
+        script(src="../includs/headerFile/js/toggleheader.js")
+        script(src="../includs/headerFile/js/skrollr.js")
+        script var s = skrollr.init();
+        script(src="js/toggle.js")
+        script(src="js/setting.js")
+        script(src="../includs/TitleName/check-title.js")

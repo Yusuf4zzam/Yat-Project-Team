@@ -1,6 +1,11 @@
 doctype html
 html
     head
+        <meta charset="UTF-8">
+        <meta name="description" content="We Sale Games So Invite Your Friens And Get Fun With It Win Rewards">
+        <meta name="keywords" content="ExGames, Games, Exstream Games, Exgames Home">
+        <meta name="author" content="Yusuf & Mokhtar & Hager & Hadeer">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         title Home
         link(rel="stylesheet", href="css/style.css")
         link(rel="icon" href="../includs/icon-page1.jpg" sizes="96x96")
@@ -53,24 +58,24 @@ html
                     h2 Games
                     p Log in now and buy the games you want, and don't forget to have fun with your friends.
                 div(class="content flexbetween")
-                    a(href="")
+                    a(href="../pubg/pubg.html")
                         .box
-                            img(src="https://wallpapercave.com/wp/wp4368683.jpg", alt="")
+                            img(src="games-images/pubg1.jpg", alt="")
                             .text
-                                h3 Game Name
-                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita a sunt quos ab nisi obcaecati reprehenderit natus perferendis, voluptatem maxime iusto totam.
-                    a(href="")
+                                h3 Pubg
+                                p PlayerUnknown's Battlegrounds (PUBG) is an online multiplayer battle royale game developed and published by PUBG Corporation, a subsidiary of South Korean video game company Bluehole.
+                    a(href="../freefire/freefire.html")
                         .box
-                            img(src="https://wallpapercave.com/wp/wp4983330.jpg", alt="")
+                            img(src="games-images/freefire.jpg", alt="")
                             .text
-                                h3 Game Name
-                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita a sunt quos ab nisi obcaecati reprehenderit natus perferendis, voluptatem maxime iusto totam.
-                    a(href="")
+                                h3 Free Fire
+                                p Game play. Garena Free Fire is an online-only action-adventure battle royale game played in a third person perspective. 
+                    a(href="../call of duty/call-of-duty.html")
                         .box
-                            img(src="https://wallpapercave.com/wp/wp4705314.jpg", alt="")
+                            img(src="games-images/call-of-duty.jpg", alt="")
                             .text
-                                h3 Game Name
-                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita a sunt quos ab nisi obcaecati reprehenderit natus perferendis, voluptatem maxime iusto totam.
+                                h3 Call of Duty
+                                p Call Of Duty (short form: CoD) is a first person and third-person shooter video game series. There are 24 games in total, not counting add-ons and DLCs. The first 8 games, excluding Modern Warfare.
             .load-more
                 .container
                     a(href="../games/index.html") load more
@@ -97,4 +102,5 @@ html
                         img(src="images/5.png", alt="")
         include ../includs/FooterFile/footer.pug
         script(src="../includs/headerFile/js/toggleheader.js")
-        
+        script(src="../includs/headerFile/js/skrollr.js")
+        script var s = skrollr.init();

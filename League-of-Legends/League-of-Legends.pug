@@ -1,0 +1,52 @@
+doctype html
+html
+    head
+        <meta charset="UTF-8">
+        <meta name="description" content="League of Legends is another one of the top MOBAs out there and it’s a direct competitor to DoTA 2. It’s a much less complex MOBA when compared to DoTA 2. League of Legends is another highly played game and has a very large esports scene backing it up which makes it another exciting game.">
+        <meta name="keywords" content="ExGames, League of Legends">
+        <meta name="author" content="Yusuf & Mokhtar & Hager & Hadeer">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        title League of Legends
+        link(rel="stylesheet", href="css/style.css")
+        link(rel="icon" href="../includs/icon-page1.jpg" sizes="96x96")
+        script(src="https://kit.fontawesome.com/112897e29a.js" crossorigin="anonymous")
+    body
+        include ../includs/headerFile/header.pug
+
+        //- Start Slider Box
+        div(class="slider")
+            .overlay
+            div(class="container flex align-center")
+                .content
+                    h1.check-heading-page
+                    p Home 
+                        i(class="fas fa-chevron-right")
+                        |Games
+                        i(class="fas fa-chevron-right")
+                        span.check-text-page
+        .game
+            .container
+                div(class="head flex align-center")
+                    .image
+                        img(src="images/icon.jpg", alt="")
+                    .text
+                        h3 League of Legends
+                        .stars
+                            i(class="fas fa-star")
+                            i(class="fas fa-star")
+                            i(class="fas fa-star")
+                            i(class="fas fa-star")
+                            i(class="far fa-star")
+                .details
+                    p League of Legends is another one of the top MOBAs out there and it’s a direct competitor to DoTA 2. It’s a much less complex MOBA when compared to DoTA 2. League of Legends is another highly played game and has a very large esports scene backing it up which makes it another exciting game.
+                .link
+                    a(class="global-hover" download="images/slider.jpg" href="data:application/octet-stream;base64,PD94ANDSOON") Download
+
+        include ../includs/FooterFile/footer.pug
+        
+        script(src="../includs/headerFile/js/toggleheader.js")
+        script(src="../includs/headerFile/js/skrollr.js")
+        script var s = skrollr.init();
+        script(src="js/toggle.js")
+        script(src="js/setting.js")
+        script(src="../includs/TitleName/check-title.js")

@@ -1,0 +1,82 @@
+@import url(../../FooterFile/css/footerstyle.css);
+@import url(../../headerFile/css/headerstyle.css);
+@import url(../../globalrules/framework.css);
+
+$maintextcolor: #D64481;
+$first-bg-color:#171627;
+$second-bg-color: #131222;
+
+.slider {
+    position: relative;
+    height: 500px;
+    background: url(../images/pubg1.jpg) no-repeat center;
+    background-size: cover;
+    color: #FFF;
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(24, 21, 40, .7);
+        height: 100%;
+        width: 100%;
+    }
+    .container {
+        height: 100%;
+        .content {
+            z-index: 10;
+        }
+        h1 {
+            font-size: 45px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            width: 100%;
+        }
+        p {
+            color: #D1D1D1;
+            display: flex;
+            align-items: center;
+            i {
+                font-size: 12px;
+                margin: 0 20px;
+            }
+        }
+    }
+}
+
+.game {
+    padding: 70px 0;
+    background: $second-bg-color;
+    .image {
+        margin-right: 30px;
+        img {
+            width: 200px;
+            border-radius: 10px;
+        }
+    }
+    h3 {
+        font-size: 40px;
+        color: #FFF;
+        margin-bottom: 10px;
+    }
+    i {
+        color: rgb(207, 150, 27);
+        font-size: 20px;
+        margin-right: 5px;
+    }
+    .details {
+        margin-top: 30px;
+        p {
+            color: #D1D1D1;
+            line-height: 1.5;
+        }
+    }
+    .link {
+        margin-top: 40px;
+        text-align: center;
+        a {
+            text-decoration: none;
+            padding: 7px 50px;
+            border-radius: 3px;
+        }
+    }
+}

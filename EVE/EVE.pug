@@ -1,0 +1,52 @@
+doctype html
+html
+    head
+        <meta charset="UTF-8">
+        <meta name="description" content="If you like space battles, EVE Online is a must-play game for you. The MMO space battle game is full of epic battles that you can be a part of. The game is old, having released in 2003, but it’s still well worthy of being on this list.">
+        <meta name="keywords" content="ExGames, EVE Online">
+        <meta name="author" content="Yusuf & Mokhtar & Hager & Hadeer">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        title EVE Online
+        link(rel="stylesheet", href="css/style.css")
+        link(rel="icon" href="../includs/icon-page1.jpg" sizes="96x96")
+        script(src="https://kit.fontawesome.com/112897e29a.js" crossorigin="anonymous")
+    body
+        include ../includs/headerFile/header.pug
+
+        //- Start Slider Box
+        div(class="slider")
+            .overlay
+            div(class="container flex align-center")
+                .content
+                    h1.check-heading-page
+                    p Home 
+                        i(class="fas fa-chevron-right")
+                        |Games
+                        i(class="fas fa-chevron-right")
+                        span.check-text-page
+        .game
+            .container
+                div(class="head flex align-center")
+                    .image
+                        img(src="images/icon.jpg", alt="")
+                    .text
+                        h3 EVE Online
+                        .stars
+                            i(class="fas fa-star")
+                            i(class="fas fa-star")
+                            i(class="fas fa-star")
+                            i(class="fas fa-star")
+                            i(class="fas fa-star")
+                .details
+                    p If you like space battles, EVE Online is a must-play game for you. The MMO space battle game is full of epic battles that you can be a part of. The game is old, having released in 2003, but it’s still well worthy of being on this list.
+                .link
+                    a(class="global-hover" download="images/slider.jpg" href="data:application/octet-stream;base64,PD94ANDSOON") Download
+
+        include ../includs/FooterFile/footer.pug
+        
+        script(src="../includs/headerFile/js/toggleheader.js")
+        script(src="../includs/headerFile/js/skrollr.js")
+        script var s = skrollr.init();
+        script(src="js/toggle.js")
+        script(src="js/setting.js")
+        script(src="../includs/TitleName/check-title.js")

@@ -1,0 +1,13 @@
+@import url(../../includs/headerFile/css/headerstyle.css);
+@import url(../../includs/FooterFile/css/footerstyle.css);
+@import url(../../includs/games-slider/css/style.css);
+@import url(../../globalrules/framework.css);
+.slider {
+  background: url(../images/slider.jpg) center bottom;
+  background-size: cover;
+}
+
+.game img {
+  height: 150px;
+}
+/*# sourceMappingURL=style.css.map */

@@ -6,4 +6,8 @@
 .games {
   background: #131222 !important;
 }
+
+.games img {
+  height: 200px;
+}
 /*# sourceMappingURL=style.css.map */

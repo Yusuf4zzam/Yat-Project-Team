@@ -1,0 +1,52 @@
+doctype html
+html
+    head
+        <meta charset="UTF-8">
+        <meta name="description" content="Electronic Arts’ Titanfall 2 may have been released in 2016, but it’s still a one of the best online PC games that you can play. In Titanfall 2, players control large robots (called Titans) with some incredible abilities including things like wall running among others.">
+        <meta name="keywords" content="ExGames, Titanfall">
+        <meta name="author" content="Yusuf & Mokhtar & Hager & Hadeer">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        title Titanfall
+        link(rel="stylesheet", href="css/style.css")
+        link(rel="icon" href="../includs/icon-page1.jpg" sizes="96x96")
+        script(src="https://kit.fontawesome.com/112897e29a.js" crossorigin="anonymous")
+    body
+        include ../includs/headerFile/header.pug
+
+        //- Start Slider Box
+        div(class="slider")
+            .overlay
+            div(class="container flex align-center")
+                .content
+                    h1.check-heading-page
+                    p Home 
+                        i(class="fas fa-chevron-right")
+                        |Games
+                        i(class="fas fa-chevron-right")
+                        span.check-text-page
+        .game
+            .container
+                div(class="head flex align-center")
+                    .image
+                        img(src="images/icon.jpg", alt="")
+                    .text
+                        h3 Titanfall
+                        .stars
+                            i(class="fas fa-star")
+                            i(class="fas fa-star")
+                            i(class="fas fa-star")
+                            i(class="fas fa-star")
+                            i(class="fas fa-star-half-alt")
+                .details
+                    p Electronic Arts’ Titanfall 2 may have been released in 2016, but it’s still a one of the best online PC games that you can play. In Titanfall 2, players control large robots (called Titans) with some incredible abilities including things like wall running among others.
+                .link
+                    a(class="global-hover" download="images/slider.jpg" href="data:application/octet-stream;base64,PD94ANDSOON") Download
+
+        include ../includs/FooterFile/footer.pug
+        
+        script(src="../includs/headerFile/js/toggleheader.js")
+        script(src="../includs/headerFile/js/skrollr.js")
+        script var s = skrollr.init();
+        script(src="js/toggle.js")
+        script(src="js/setting.js")
+        script(src="../includs/TitleName/check-title.js")

@@ -10,4 +10,7 @@ $second-bg-color: #131222;
 
 .games {
     background: $second-bg-color !important;
+    img {
+        height: 200px;
+    }
 }

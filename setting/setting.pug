@@ -1,6 +1,11 @@
 doctype html
 html
     head
+        <meta charset="UTF-8">
+        <meta name="description" content="You Can Change Your Settings User Name Email and Password">
+        <meta name="keywords" content="ExGames, Exgames settings">
+        <meta name="author" content="Yusuf & Mokhtar & Hager & Hadeer">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         title Settings
         link(rel="stylesheet", href="css/style.css")
         link(rel="icon" href="../includs/icon-page1.jpg" sizes="96x96")
@@ -22,7 +27,7 @@ html
                             |Change User Name
                     form(action="" id="form-1")
                         div(class="control-form")
-                            input(type="text" name="new name" placeholder="Type The New Name")
+                            input(type="text" name="newname" placeholder="Type The New Name" value="" id="username")
                             .error-username error
                             i(class="fas fa-check-circle")
                             i(class="fas fa-exclamation-circle")
@@ -36,7 +41,7 @@ html
                             |Change Email
                     form(action="" id="form-2")
                         div(class="control-form")
-                            input(type="text" name="email" placeholder="Type New Email")
+                            input(type="text" name="email" placeholder="Type New Email" id="email")
                             .error-username error
                             i(class="fas fa-check-circle")
                             i(class="fas fa-exclamation-circle")
@@ -48,21 +53,21 @@ html
                             i(class="fas fa-plus")
                             i(class="fas fa-minus")
                             |Change Password
-                    form(action="" id="form-2")
+                    form(action="" id="form-3")
                         div(class="control-form")
-                            input(type="password" name="old-password" placeholder="Type Old Password")
+                            input(type="password" name="old-password" placeholder="Type Old Password" id="old-password")
                             .error-username error
                             i(class="fas fa-check-circle")
                             i(class="fas fa-exclamation-circle")
 
                         div(class="control-form")
-                            input(type="password" name="new-password" placeholder="Type The New Password")
+                            input(type="password" name="new-password" placeholder="Type The New Password" id="new-password")
                             .error-username error
                             i(class="fas fa-check-circle")
                             i(class="fas fa-exclamation-circle")
 
                         div(class="control-form")
-                            input(type="password" name="confirm-password" placeholder="Confirm Password")
+                            input(type="password" name="confirm-password" placeholder="Confirm Password" id="confirm-password")
                             .error-username error
                             i(class="fas fa-check-circle")
                             i(class="fas fa-exclamation-circle")
@@ -70,5 +75,8 @@ html
 
         include ../includs/FooterFile/footer.pug
         script(src="../includs/headerFile/js/toggleheader.js")
+        script(src="../includs/headerFile/js/skrollr.js")
+        script var s = skrollr.init();
         script(src="js/toggle.js")
+        script(src="js/setting.js")
         script(src="../includs/TitleName/check-title.js")

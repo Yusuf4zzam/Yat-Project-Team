@@ -114,8 +114,13 @@
   cursor: pointer;
 }
 
+.setting .form button:focus {
+  outline: none;
+}
+
 .setting .control-form {
   position: relative;
+  text-align: left;
 }
 
 .setting .control-form i {
@@ -159,13 +164,13 @@
 }
 
 @media (max-width: 767px) {
-  .heading p {
+  .form {
     width: 100% !important;
   }
 }
 
 @media (min-width: 767px) and (max-width: 991px) {
-  .heading p {
+  .form {
     width: 80% !important;
   }
 }
