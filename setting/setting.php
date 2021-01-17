@@ -1,131 +1,19 @@
 <?php
-    require_once('../includs/connect.php');
-    $username = $password = $confirm_password = $email= "";
-    $username_err = $password_err = $confirm_password_err = $email_err ="";
-    
-    if($_SERVER["REQUEST_METHOD"] == "POST")
-    {
-      if(empty(trim($_POST["username"])))
-      {
-        $username_err = ".";
-      }
-      else
-      {
-        $sql = "SELECT id FROM users WHERE username = ?";
-          if($stmt = mysqli_prepare($link, $sql))
-          {
-              mysqli_stmt_bind_param($stmt, "s", $param_username);
-              $param_username = trim($_POST["username"]);
-              if(mysqli_stmt_execute($stmt))
-              {
-                  mysqli_stmt_store_result($stmt);
-                  
-                  if(mysqli_stmt_num_rows($stmt) == 1)
-                  {
-                      $username_err = "This username is already taken.";
-                  }
-                  else
-                  {
-                      $username = trim($_POST["username"]);
-                  }
-              }
-              else
-              {
-                  echo "Oops! Something went wrong. Please try again later.";
-              }
-              mysqli_stmt_close($stmt);
-          }
-      }
-      
-    if(empty(trim($_POST["email"])))
-    {
-        $email_err = ".";
-    }
-    else
-    {
-        $sql = "SELECT id FROM users WHERE email = ?";
-        
-        if($stmt = mysqli_prepare($link, $sql))
-        {
-            mysqli_stmt_bind_param($stmt, "s", $param_email);
-            
-            $param_email = trim($_POST["email"]);
-            
-            if(mysqli_stmt_execute($stmt))
-            {
-                mysqli_stmt_store_result($stmt);
-                
-                if(mysqli_stmt_num_rows($stmt) == 1)
-                {
-                    $email_err = "This email is already taken.";
-                }
-                else
-                {
-                    $email = trim($_POST["email"]);
-                }
-            }
-            else
-            {
-                echo "Oops! Something went wrong. Please try again later.";
-            }
-            mysqli_stmt_close($stmt);
-        }
-    }
-    
-      if(empty(trim($_POST["password"])))
-      {
-        $password_err = ".";     
-      }
-      else
-      {
-        $password = trim($_POST["password"]);
-      }
-      if(empty(trim($_POST["confirm-password"])))
-      {
-          $confirm_password_err = ".";     
-      }
-      else
-      {
-          $confirm_password = trim($_POST["confirm-password"]);
-      }
-      if(empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($email_err))
-      {
-          // Prepare an insert statement
-          $sql = "INSERT INTO users (username,email, password) VALUES (?, ?, ?)";
-           
-          if($stmt = mysqli_prepare($link, $sql))
-          {
-              mysqli_stmt_bind_param($stmt, "sss", $param_username, $param_email, $param_password);
-              $param_username = $username;
-              $param_email=$email;
-              $param_password = password_hash($password, PASSWORD_DEFAULT); 
-              if(mysqli_stmt_execute($stmt))
-              {
-                  header("location:../loginpage/login.php");
-              }
-              else
-              {
-                  echo "Something went wrong. Please try again later.";
-              }
-              mysqli_stmt_close($stmt);
-          }
-      }
-      mysqli_close($link);
-    }
+  include('newemail.php');
 ?>
 <!DOCTYPE html>
 <html>
   <head><meta charset="UTF-8">
-<meta name="description" content="Sign Up Be One of Owr Family So You Cn Donload Games and Win Rewards">
-<meta name="keywords" content="ExGames, Exgames signup, signup Exgames">
+<meta name="description" content="You Can Change Your Settings User Name Email and Password">
+<meta name="keywords" content="ExGames, Exgames settings">
 <meta name="author" content="Yusuf & Mokhtar & Hager & Hadeer">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Page</title>
-    <link rel="stylesheet" href="css/signupstyle.css">
+    <title>Settings</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="../includs/icon-page1.jpg" sizes="96x96">
     <script src="https://kit.fontawesome.com/112897e29a.js" crossorigin="anonymous"></script>
   </head>
-  <body> 
+  <body>
     <header>
       <div class="overlay"></div>
       <div class="info">
@@ -145,11 +33,16 @@
               </li>
             </ul>
             <div class="logout">
-              <span style="color:#D64481">
+              <span style="color:#D64481 ; text-transform:capitalize;">
                 <?php
-                  if(!(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true))
+                  if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)
                   {
-                    echo '<a href="../loginpage/login.php">login</a>';
+                    echo $_SESSION['username'];
+                    echo '&nbsp | &nbsp<a href="../loginpage/logout.php">logout</a>';
+                  }
+                  else
+                  {
+                    echo '<a href="../loginpage/login.php">Login</a>';
                   }
                 ?>
               </span>
@@ -167,12 +60,12 @@
             <li><a href="../games/index.php">games</a></li>
             <li><a href="">pages
                 <ul>
-                  <li> <a href="../about-us/about-us.php">about us</a></li>
-                  <li> <a href="../team/team.php">team</a></li>
-                  <li> <a href="../faq/faq.php">faq</a></li>
-                  <li> <a href="../terms/terms.php">terms & Conditions</a></li>
+                  <li> <a href="../about-us/about-us.html">about us</a></li>
+                  <li> <a href="../team/team.html">team</a></li>
+                  <li> <a href="../faq/faq.html">faq</a></li>
+                  <li> <a href="../terms/terms.html">terms & Conditions</a></li>
                 </ul></a></li>
-            <li><a href="../contact/contact.php">Contact</a></li>
+            <li><a href="../contact/contact.html">Contact</a></li>
             <li><a href="../setting/setting.php">Settings</a></li>
               <?php
                 if(!(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true))
@@ -189,10 +82,10 @@
             </div>
             <ul class="toggle-ul flex"><a href="../home/home.php">
                 <li>home</li></a><a href="../games/index.php">
-                <li>games</li></a><a href="../about-us/about-us.php">
-                <li>about us</li></a><a href="../team/team.php">
-                <li>team</li></a><a href="../faq/faq.php">
-                <li>faq</li></a><a href="../terms/terms.php">
+                <li>games</li></a><a href="../about-us/about-us.html">
+                <li>about us</li></a><a href="../team/team.html">
+                <li>team</li></a><a href="../faq/faq.html">
+                <li>faq</li></a><a href="../terms/terms.html">
                 <li>terms & conditions</li></a><a href="../setting/setting.php">
                 <li>setting</li></a>
                 <?php
@@ -219,48 +112,60 @@
       <div class="pop-up" data-0="display: none;" data-500="display: block;"><a href="#"><i class="fas fa-arrow-up"></i></a></div>
     </header>
     <div class="slider">
-      <div class="container flex-center">
-        <div class="register global-form">
-          <div class="header">
-            <h2>register</h2>
+      <div class="overlay"></div>
+      <div class="container flex align-center">
+        <div class="content">
+          <h1 class="check-heading-page"></h1>
+          <p>Home <i class="fas fa-chevron-right"></i><span class="check-text-page"></span></p>
+        </div>
+      </div>
+    </div>
+    <div class="setting">
+      <div class="container flex-center ">
+        <div class="form">
+          <div class="text">
+            <h4><i class="fas fa-plus"></i><i class="fas fa-minus"></i>Change User Name</h4>
           </div>
-          <form autocomplete="off" id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="control-form <?php echo (!empty($username_err)) ? 'error' : ''; ?>">
-              <input class="main" type="text" name="username" placeholder="User Name" id="username" value="<?php echo $username; ?>">
-              <span class="help-block" style="color:#e74c3d"><?php echo $username_err;?></span>
+          <form method="post"action="newname.php" id="form-1">
+            <div class="control-form">
+              <input type="text" name="new_name" placeholder="Type The New Name" value="" id="username">
+              <div class="error-username">error</div><i class="fas fa-check-circle"></i><i class="fas fa-exclamation-circle"></i>
+            </div>
+            <button class="global-hover">Submit</button>
+          </form>
+        </div>
+        <div class="form">
+          <div class="text flex align-center">
+            <h4><i class="fas fa-plus"></i><i class="fas fa-minus"></i>Change Email</h4>
+          </div>
+          <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" id="form-2">
+            <div class="control-form <?php echo (!empty($new_email_err)) ? 'error' : ''; ?>">
+              <input type="text" name="new_email" placeholder="Type New Email" id="email">
+              <span class="help-block" style="color:#e74c3d"><?php echo $new_email_err; ?></span>
               <div class="error-username"></div><i class="fas fa-check-circle"></i><i class="fas fa-exclamation-circle"></i>
             </div>
-            <div class="control-form <?php echo (!empty($email_err)) ? 'error' : ''; ?>">
-              <input class="main" type="text" name="email" placeholder="Email" id="email" value="<?php echo $email; ?>">
-              <span class="help-block" style="color:#e74c3d"><?php echo $email_err;?></span>
-              <div class="error-email"></div><i class="fas fa-check-circle"></i><i class="fas fa-exclamation-circle"></i>
-            </div>
-            <div class="control-form">
-              <input class="main" type="password" name="password" placeholder="Password" id="password">
-              <div class="error-password">error</div><i class="fas fa-check-circle"></i><i class="fas fa-exclamation-circle"></i>
-            </div>
-            <div class="control-form">
-              <input class="main" type="password" name="confirm-password" placeholder="Confirm Password" id="password2">
-              <div class="error-confirm-password">error</div><i class="fas fa-check-circle"></i><i class="fas fa-exclamation-circle"></i>
-            </div>
-            <div class="control-form">
-              <input type="checkbox" name="check-terms" placeholder="Confirm Password" id="check-terms">
-              <label for="check-terms">I agree Terms & Conditions</label>
-              <div class="error-terms">error</div>
-            </div>
-            <div class="control-submit">
-              <input type="submit" name="sign-submit" value="sign up">
-            </div>
+            <button class="global-hover">Submit</button>
           </form>
-          <div class="other-account">
-            <h4>Or Signup With</h4>
-            <div class="social flex-center">
-              <p class="face">Facebook</p>
-              <p class="twitter">Twitter</p>
-              <p class="google">Google+</p>
-            </div>
-            <p class="account">have an account <a href="../loginpage/login.php">Login</a></p>
+        </div>
+        <div class="form">
+          <div class="text flex align-center">
+            <h4><i class="fas fa-plus"></i><i class="fas fa-minus"></i>Change Password</h4>
           </div>
+          <form method="post" action="newpass.php" id="form-3">
+            <div class="control-form">
+              <input type="password" name="old_password" placeholder="Type Old Password" id="old-password">
+              <div class="error-username">error</div><i class="fas fa-check-circle"></i><i class="fas fa-exclamation-circle"></i>
+            </div>
+            <div class="control-form">
+              <input type="password" name="new_password" placeholder="Type The New Password" id="new-password">
+              <div class="error-username">error</div><i class="fas fa-check-circle"></i><i class="fas fa-exclamation-circle"></i>
+            </div>
+            <div class="control-form">
+              <input type="password" name="confirm_password" placeholder="Confirm Password" id="confirm-password">
+              <div class="error-username">error</div><i class="fas fa-check-circle"></i><i class="fas fa-exclamation-circle"></i>
+            </div>
+            <button class="global-hover">Submit</button>
+          </form>
         </div>
       </div>
     </div>
@@ -294,9 +199,11 @@
         <p>Design By Hager-Mokhtar-Yusuf-Hadeer</p>
       </div>
     </div>
-    <script src="js/sign-up-validation.js"></script>
+    <script src="../includs/headerFile/js/toggleheader.js"></script>
     <script src="../includs/headerFile/js/skrollr.js"></script>
     <script>var s = skrollr.init();</script>
-    <script src="../includs/headerFile/js/toggleheader.js"></script>
+    <script src="js/toggle.js"></script>
+    <script src="js/setting.js"></script>
+    <script src="../includs/TitleName/check-title.js"></script>
   </body>
 </html>

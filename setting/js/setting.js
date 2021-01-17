@@ -50,7 +50,7 @@ function checkEmail() {
         setSuccessFor(email);
     }
     if(email.parentElement.classList.contains("success")) {
-        form_1.submit();
+        form_2.submit();
     }
 }
 
@@ -90,7 +90,7 @@ function checkPassword() {
         setSuccessFor(confirmPassword)
     }
     if(confirmPassword.parentElement.classList.contains("success") && newPassword.parentElement.classList.contains("success")) {
-        form_1.submit();
+        form_3.submit();
     }
 }
 

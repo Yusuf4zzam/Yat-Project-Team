@@ -1,131 +1,19 @@
 <?php
-    require_once('../includs/connect.php');
-    $username = $password = $confirm_password = $email= "";
-    $username_err = $password_err = $confirm_password_err = $email_err ="";
-    
-    if($_SERVER["REQUEST_METHOD"] == "POST")
-    {
-      if(empty(trim($_POST["username"])))
-      {
-        $username_err = ".";
-      }
-      else
-      {
-        $sql = "SELECT id FROM users WHERE username = ?";
-          if($stmt = mysqli_prepare($link, $sql))
-          {
-              mysqli_stmt_bind_param($stmt, "s", $param_username);
-              $param_username = trim($_POST["username"]);
-              if(mysqli_stmt_execute($stmt))
-              {
-                  mysqli_stmt_store_result($stmt);
-                  
-                  if(mysqli_stmt_num_rows($stmt) == 1)
-                  {
-                      $username_err = "This username is already taken.";
-                  }
-                  else
-                  {
-                      $username = trim($_POST["username"]);
-                  }
-              }
-              else
-              {
-                  echo "Oops! Something went wrong. Please try again later.";
-              }
-              mysqli_stmt_close($stmt);
-          }
-      }
-      
-    if(empty(trim($_POST["email"])))
-    {
-        $email_err = ".";
-    }
-    else
-    {
-        $sql = "SELECT id FROM users WHERE email = ?";
-        
-        if($stmt = mysqli_prepare($link, $sql))
-        {
-            mysqli_stmt_bind_param($stmt, "s", $param_email);
-            
-            $param_email = trim($_POST["email"]);
-            
-            if(mysqli_stmt_execute($stmt))
-            {
-                mysqli_stmt_store_result($stmt);
-                
-                if(mysqli_stmt_num_rows($stmt) == 1)
-                {
-                    $email_err = "This email is already taken.";
-                }
-                else
-                {
-                    $email = trim($_POST["email"]);
-                }
-            }
-            else
-            {
-                echo "Oops! Something went wrong. Please try again later.";
-            }
-            mysqli_stmt_close($stmt);
-        }
-    }
-    
-      if(empty(trim($_POST["password"])))
-      {
-        $password_err = ".";     
-      }
-      else
-      {
-        $password = trim($_POST["password"]);
-      }
-      if(empty(trim($_POST["confirm-password"])))
-      {
-          $confirm_password_err = ".";     
-      }
-      else
-      {
-          $confirm_password = trim($_POST["confirm-password"]);
-      }
-      if(empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($email_err))
-      {
-          // Prepare an insert statement
-          $sql = "INSERT INTO users (username,email, password) VALUES (?, ?, ?)";
-           
-          if($stmt = mysqli_prepare($link, $sql))
-          {
-              mysqli_stmt_bind_param($stmt, "sss", $param_username, $param_email, $param_password);
-              $param_username = $username;
-              $param_email=$email;
-              $param_password = password_hash($password, PASSWORD_DEFAULT); 
-              if(mysqli_stmt_execute($stmt))
-              {
-                  header("location:../loginpage/login.php");
-              }
-              else
-              {
-                  echo "Something went wrong. Please try again later.";
-              }
-              mysqli_stmt_close($stmt);
-          }
-      }
-      mysqli_close($link);
-    }
+  session_start();
 ?>
 <!DOCTYPE html>
 <html>
   <head><meta charset="UTF-8">
-<meta name="description" content="Sign Up Be One of Owr Family So You Cn Donload Games and Win Rewards">
-<meta name="keywords" content="ExGames, Exgames signup, signup Exgames">
+<meta name="description" content="We Sale Games So Invite Your Friens And Get Fun With It Win Rewards">
+<meta name="keywords" content="ExGames, Games, Exstream Games, Exgames Home">
 <meta name="author" content="Yusuf & Mokhtar & Hager & Hadeer">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Page</title>
-    <link rel="stylesheet" href="css/signupstyle.css">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="../includs/icon-page1.jpg" sizes="96x96">
     <script src="https://kit.fontawesome.com/112897e29a.js" crossorigin="anonymous"></script>
   </head>
-  <body> 
+  <body>
     <header>
       <div class="overlay"></div>
       <div class="info">
@@ -145,11 +33,16 @@
               </li>
             </ul>
             <div class="logout">
-              <span style="color:#D64481">
+              <span style="color:#D64481 ; text-transform:capitalize;">
                 <?php
-                  if(!(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true))
+                  if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)
                   {
-                    echo '<a href="../loginpage/login.php">login</a>';
+                    echo $_SESSION['username'];
+                    echo '&nbsp | &nbsp<a href="../loginpage/logout.php">logout</a>';
+                  }
+                  else
+                  {
+                    echo '<a href="../loginpage/login.php">Login</a>';
                   }
                 ?>
               </span>
@@ -218,50 +111,146 @@
       ?>
       <div class="pop-up" data-0="display: none;" data-500="display: block;"><a href="#"><i class="fas fa-arrow-up"></i></a></div>
     </header>
-    <div class="slider">
-      <div class="container flex-center">
-        <div class="register global-form">
-          <div class="header">
-            <h2>register</h2>
-          </div>
-          <form autocomplete="off" id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="control-form <?php echo (!empty($username_err)) ? 'error' : ''; ?>">
-              <input class="main" type="text" name="username" placeholder="User Name" id="username" value="<?php echo $username; ?>">
-              <span class="help-block" style="color:#e74c3d"><?php echo $username_err;?></span>
-              <div class="error-username"></div><i class="fas fa-check-circle"></i><i class="fas fa-exclamation-circle"></i>
-            </div>
-            <div class="control-form <?php echo (!empty($email_err)) ? 'error' : ''; ?>">
-              <input class="main" type="text" name="email" placeholder="Email" id="email" value="<?php echo $email; ?>">
-              <span class="help-block" style="color:#e74c3d"><?php echo $email_err;?></span>
-              <div class="error-email"></div><i class="fas fa-check-circle"></i><i class="fas fa-exclamation-circle"></i>
-            </div>
-            <div class="control-form">
-              <input class="main" type="password" name="password" placeholder="Password" id="password">
-              <div class="error-password">error</div><i class="fas fa-check-circle"></i><i class="fas fa-exclamation-circle"></i>
-            </div>
-            <div class="control-form">
-              <input class="main" type="password" name="confirm-password" placeholder="Confirm Password" id="password2">
-              <div class="error-confirm-password">error</div><i class="fas fa-check-circle"></i><i class="fas fa-exclamation-circle"></i>
-            </div>
-            <div class="control-form">
-              <input type="checkbox" name="check-terms" placeholder="Confirm Password" id="check-terms">
-              <label for="check-terms">I agree Terms & Conditions</label>
-              <div class="error-terms">error</div>
-            </div>
-            <div class="control-submit">
-              <input type="submit" name="sign-submit" value="sign up">
-            </div>
-          </form>
-          <div class="other-account">
-            <h4>Or Signup With</h4>
-            <div class="social flex-center">
-              <p class="face">Facebook</p>
-              <p class="twitter">Twitter</p>
-              <p class="google">Google+</p>
-            </div>
-            <p class="account">have an account <a href="../loginpage/login.php">Login</a></p>
+    <div class="slider"><img class="overlay" src="images/slide-bg.png" alt="">
+      <div class="container flexbetween">
+        <div class="content">
+          <h1>Buying Games</h1>
+          <h1> <span>Get Fun</span></h1>
+          <p>We put the best games for you for your enjoyment, buy, play, and win.</p><a class="global-hover" href="">Get Started</a>
+        </div>
+        <div class="image"><img src="images/s1.png" alt=""></div>
+      </div>
+    </div>
+    <div class="member">
+      <div class="container flexbetween">
+        <div class="box">
+          <div class="image"><img src="images/achive1.png" alt=""></div>
+          <div class="text">
+            <h2>1200+</h2>
+            <p>live online</p>
           </div>
         </div>
+        <div class="box">
+          <div class="image"><img src="images/achive2.png" alt=""></div>
+          <div class="text">
+            <h2>5119+</h2>
+            <p>Active Member</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="image"><img src="images/achive3.png" alt=""></div>
+          <div class="text">
+            <h2>3318+</h2>
+            <p>daily reward</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-us">
+      <div class="container flexbetween">
+        <div class="left-box">
+          <div class="image"><img src="images/ab.jpg" alt=""></div>
+          <div class="text">
+            <p>If you need know more about XGames <a href="../about-us/about-us.php">Click here</a></p>
+          </div>
+        </div>
+        <div class="right-box">
+          <div class="box">
+            <div class="image"><img src="images/ab-icon.png" alt=""></div>
+            <div class="text">
+              <h2>Sale Games</h2>
+              <p>We sale games for you to make you happy so buy some games and get fun with friends.</p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="image"><img src="images/ab-icon2.png" alt=""></div>
+            <div class="text">
+              <h2>Instant Bonus</h2>
+              <p>We made it easy for you to buy games, buy games now and get your bonus for buying free games after that.</p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="image"><img src="images/ab-icon6.png" alt=""></div>
+            <div class="text">
+              <h2>Live Support</h2>
+              <p>We are always here for you for your direct support. If you have any problem, contact us now.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bouns">
+      <div class="container">
+        <div class="heading flex-center">
+          <h2>Referral Bonus</h2>
+          <p>Buy games and get your reward now, or get free games.</p>
+        </div>
+        <div class="content flexbetween">
+          <div class="box"><a href=""><i class="fas fa-briefcase bag"></i></a>
+            <h2>Buy with $20 Get</h2>
+            <h2>Discount 10%</h2>
+          </div>
+          <div class="box"><a href=""><i class="far fa-clone clone"></i></a>
+            <h2>Buy with $40 Get </h2>
+            <h2>Discount 20%</h2>
+          </div>
+          <div class="box"><a href=""><i class="far fa-chart-bar chart"></i></a>
+            <h2>Buy with $80 Get </h2>
+            <h2>Discount 50%</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="games">
+      <div class="container">
+        <div class="heading flex-center">
+          <h2>Games</h2>
+          <p>Log in now and buy the games you want, and don't forget to have fun with your friends.</p>
+        </div>
+        <div class="content flexbetween"><a href="../pubg/pubg.php">
+            <div class="box"><img src="games-images/pubg1.jpg" alt="">
+              <div class="text">
+                <h3>Pubg</h3>
+                <p>PlayerUnknown's Battlegrounds (PUBG) is an online multiplayer battle royale game developed and published by PUBG Corporation, a subsidiary of South Korean video game company Bluehole.</p>
+              </div>
+            </div></a><a href="../freefire/freefire.php">
+            <div class="box"><img src="games-images/freefire.jpg" alt="">
+              <div class="text">
+                <h3>Free Fire</h3>
+                <p>Game play. Garena Free Fire is an online-only action-adventure battle royale game played in a third person perspective. </p>
+              </div>
+            </div></a><a href="../call of duty/call-of-duty.php">
+            <div class="box"><img src="games-images/call-of-duty.jpg" alt="">
+              <div class="text">
+                <h3>Call of Duty</h3>
+                <p>Call Of Duty (short form: CoD) is a first person and third-person shooter video game series. There are 24 games in total, not counting add-ons and DLCs. The first 8 games, excluding Modern Warfare.</p>
+              </div>
+            </div></a></div>
+      </div>
+      <div class="load-more">
+        <div class="container"><a href="../games/index.php">load more</a></div>
+      </div>
+    </div>
+    <div class="contact">
+      <div class="container">
+        <div class="heading flex-center">
+          <h2>Contact Us</h2>
+        </div>
+        <form class="flexbetween" action="../contact/contact.php">
+          <input type="text" name="name" placeholder="Your Name">
+          <input type="text" name="email" placeholder="Your Email">
+          <textarea name="message" placeholder="Your Message"></textarea>
+          <button class="global-hover" name="submit-contact" type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+    <div class="partner">
+      <div class="container">
+        <div class="heading flex-center">
+          <h2>Games Partner</h2>
+          <p>You can buy games through these currencies traded through the site.</p>
+        </div>
+        <div class="content flexbetween"><a href=""><img src="images/1.png" alt=""></a><a href=""><img src="images/2.png" alt=""></a><a href=""><img src="images/3.png" alt=""></a><a href=""><img src="images/4.png" alt=""></a><a href=""><img src="images/5.png" alt=""></a></div>
       </div>
     </div>
     <footer>
@@ -294,9 +283,8 @@
         <p>Design By Hager-Mokhtar-Yusuf-Hadeer</p>
       </div>
     </div>
-    <script src="js/sign-up-validation.js"></script>
+    <script src="../includs/headerFile/js/toggleheader.js"></script>
     <script src="../includs/headerFile/js/skrollr.js"></script>
     <script>var s = skrollr.init();</script>
-    <script src="../includs/headerFile/js/toggleheader.js"></script>
   </body>
 </html>
